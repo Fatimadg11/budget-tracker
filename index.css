@@ -1,5 +1,6 @@
 body{
     background: white;
+    
 }
 
 a{
@@ -23,8 +24,6 @@ a{
   color: gray;
 }
 
-
-
 .last-part{height: 400px;}
 
 #expense-history{
@@ -42,9 +41,10 @@ h1{
   margin-bottom: 90px;
   height: 70px;
   color: gray;
+  margin-top: 120px;
 
 
-  
+ 
 }
 
 
@@ -57,7 +57,7 @@ h1{
 
 
 
-p, h2, h4{
+h2, h4{
     text-align: center;
 
 }
@@ -141,7 +141,7 @@ table{
 }
 
 
-#P{
+#P{ 
   display: flex;
   justify-content: space-between;
   margin-bottom: 10%;
@@ -152,12 +152,7 @@ table{
   transform: translateY(-2px);
 }
 
-#log-in{
-  text-align: center;
-  width: 40%;
-  height: 40%;
 
-}
 
 #category{
   text-align: center;
@@ -176,37 +171,19 @@ table{
 }
 
 
-
-.s-container{
-  width: 40%;
-  text-align: center;
-  padding-left: 30%;
-}
-
 legend{
   font-size: 25px;
 }
 
 
-#password, #email, #firstName, #lastName, #username, #confirmPassword, #email-f-p{
-    padding: 10px 10px 10px 10px;
-    border-radius: 7px;
-}
 
-#email-container{
-    width: 70px;
-}
-
-#submit, #loginBtn{
+#submit{
  width: 40%;
  padding: 6px;
  border-radius: 50px;
  border-color: gray;
  background-color:  #FBEAEB;
  color:black;
-
-
-
 
 }
 
@@ -216,14 +193,18 @@ header{
   border-radius: 12px;
   box-shadow: 6px 6px 6px 6px lightgray;
   margin: auto;
+
   margin-bottom: 90px;
   width: 95%;
   background:  #FBEAEB;
   color: gray;
   text-align: right;
   font-size: larger;
-
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* height: 60px; */
+  line-height: 20px;
 }
 
 p{
@@ -232,3 +213,7 @@ p{
   font-size: 19px;
 }
 
+.io{
+
+
+}
