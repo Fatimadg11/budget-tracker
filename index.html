@@ -1,224 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weekly Budget Tracker</title>
-    <link rel="stylesheet" href="index.css">
-      
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Budget Tracker</title>
+  <link rel="stylesheet" href="index.css">
+
 </head>
 
 <body>
 
+<<<<<<< HEAD
+  <!-- header -->
+  <header>
+    <div id="link">
+      <a href="login.html">Log Out</a>
+      <a href="about.html">About Us</a>
+    </div>
+  </header>
+=======
 <!-- header -->
  <header>  
-<a href="login.html">Log Out</a>
 <a href="about.html">About Us</a>
+<a href="login.html">Log Out</a>
  </header>
+>>>>>>> 4383d12db2a0bd2ce5a10d813295e33bb3aa6301
 
 
 
-<!-- first section beggining -->
+  <!-- first section beggining -->
 
 
+<<<<<<< HEAD
+  <h1>Weekly Budget Tracker</h1>
+  <section class="first-part">
+=======
 <h1 class="io">Weekly Budget Tracker</h1> 
 <section class="first-part">
+>>>>>>> 4383d12db2a0bd2ce5a10d813295e33bb3aa6301
 
 
     <h2 style="font-size: 40px;">Add New Expense</h2>
-<div class="ff-p">
+    <div class="ff-p">
 
 
-<!-- income/expense -->
+      <!-- income/expense -->
 
-<div id="category-container">
-<form id="category">
- <fieldset>
-    <label>
-     <input type="radio" name="category" value="Expense" id="expense-radio"> Expense
-    </label>
+      <div id="category-container">
+        <form id="category">
+          <fieldset>
+            <label>
+              <input type="radio" name="category" value="Expense" id="expense-radio"> Expense
+            </label>
 
-    <label>
-     <input type="radio" name="category" value="Income" id="income-radio"> Income
-    </label>
- </fieldset>
-</form>
-</div><br><br>
+            <label>
+              <input type="radio" name="category" value="Income" id="income-radio"> Income
+            </label>
+          </fieldset>
+        </form>
+      </div><br><br>
 
-<!-- other buttons -->
-       
-       Date:<input type="date" id="date">
-       Description:<input type="text" placeholder="What was it?" id="description">
-       Amount:<input type="number" placeholder="How much was it?" id="amount">
-       Location:<input type="text" placeholder="Where?" id="location">
-       
-</div>
-<br><br>
+      <!-- other buttons -->
 
+      Date:<input type="date" id="date">
+      Description:<input type="text" placeholder="What was it?" id="description">
+      Amount:<input type="number" placeholder="How much was it?" id="amount">
+      Location:<input type="text" placeholder="Where?" id="location">
 
-
-
-
-<!-- select category section -->
-
-
-<div class="f-p">
- <form >
-    <fieldset style="width: 700px;">
-    <legend>Select Category</legend>
-
-<!-- expense -->
- <div id="EI"> 
- <div class="incomeexpense">
-<!-- 1  -->
-<div style="display:flex;">
-<div>
-    <input type="radio" id="food" name="form" value="Food">
-    <label for="Food">Food</label>
-</div><br><br>
-
-<div>
-    <input type="radio" id="transport" name="form" value="Transport">
-    <label for="Transport">Transport</label>
-</div><br><br>
-
-<div>
-    <input type="radio" id="loans" name="form" value="Loans">
-    <label for="Loans">Loans</label>
-</div><br><br>
-
-</div><br>
-<!-- 1end -->
-
-
-<!-- 2 -->
-<div style="display:flex;">
-
-<div>    
-    <input type="radio" id="vehicle" name="form" value="vehicle">
-    <label for="vehicle">Vehicle</label>
-</div><br><br>
-
-<div>
-    <input type="radio" id="Accomodation" name="form" value="Accomodation">
-    <label for="Accomodation">Accomodation</label>
-</div><br><br>
-
-<div>
-    <input type="radio" id="clothing" name="form" value="clothing">
-    <label for="clothing">Clothing</label>
-</div><br><br>
-
-</div><br>
-<!-- 2end -->
-
-<!-- 3 -->
-<div style="display:flex;">
-
-<div>
-    <input type="radio" id="shopping" name="form" value="shopping">
-    <label for="shopping">Shopping</label>
-</div><br><br>
-
-<div>
-    <input type="radio" id="travel" name="form" value="travel">
-    <label for="travel">Travel</label>
-</div><br><br>
-
-<div>
-    <input type="radio" id="entertainmet" name="form" value="entertainmet">
-    <label for="entertainmet">Entertainment</label>
-</div><br><br>
-
-</div><br>
-<!-- 3end -->
-</div>
-
-<!-- income -->
-
-<div id="income-category">
-
-<!-- 4 -->
- <div class="incomeexpense">
-<div style="display:flex;">
-
-  <div>
-    <input type="radio" id="salary" name="form" value="salary">
-    <label for="salary">Salary</label>
-  </div><br><br>
-
-  <div>
-    <input type="radio" id="bonus" name="form" value="bonus">
-    <label for="bonus">Bonus</label>
-  </div><br><br>
-  
-  <div>
-    <input type="radio" id="accumulation" name="form" value="accumulation">
-    <label for="accumulation">Accumulation</label>
-  </div><br><br>
-  <br>
-<!-- 4end -->
-
-
-<!-- 5 -->
-
-</div>
-
-<div style="display:flex;">
-
-  <div>
-    <input type="radio" id="commissions" name="form" value="commissions">
-    <label for="commissions">Commissions</label>
-  </div><br><br>
-
-  <div>
-    <input type="radio" id="investment" name="form" value="investment">
-    <label for="investment">Investment</label>
-  </div><br><br>
-
-
-   <div>
-    <input type="radio" id="returns" name="form" value="returns">
-    <label for="returns">Returns</label>
-  </div><br>
-
-</div>
- </div>
-
-<!-- 5end -->
-
-
-
-    </fieldset>
-  </form>
-</div>
-<!-- select category section ending -->
+    </div>
+    <br><br>
 
 
 
 
 
-<!-- add expense button -->
-
-  <br><br>  
-
-  <div class="button">
-
-  <button id ="add_expense" type="button"> Add Expense</button>
-  
-  </div>
-
-  <br><br>
-</section>
+    <!-- select category section -->
 
 
+    <div class="f-p">
+      <form>
+        <fieldset style="width: 700px;">
+          <legend>Select Category</legend>
+
+          <!-- expense -->
+          <div id="EI">
+            <div class="incomeexpense">
+              <!-- 1  -->
+              <div style="display:flex;">
+                <div>
+                  <input type="radio" id="food" name="form" value="Food">
+                  <label for="Food">Food</label>
+                </div><br><br>
+
+                <div>
+                  <input type="radio" id="transport" name="form" value="Transport">
+                  <label for="Transport">Transport</label>
+                </div><br><br>
+
+                <div>
+                  <input type="radio" id="loans" name="form" value="Loans">
+                  <label for="Loans">Loans</label>
+                </div><br><br>
+
+              </div><br>
+              <!-- 1end -->
+
+
+              <!-- 2 -->
+              <div style="display:flex;">
+
+                <div>
+                  <input type="radio" id="vehicle" name="form" value="vehicle">
+                  <label for="vehicle">Vehicle</label>
+                </div><br><br>
+
+                <div>
+                  <input type="radio" id="Accomodation" name="form" value="Accomodation">
+                  <label for="Accomodation">Accomodation</label>
+                </div><br><br>
+
+                <div>
+                  <input type="radio" id="clothing" name="form" value="clothing">
+                  <label for="clothing">Clothing</label>
+                </div><br><br>
+
+              </div><br>
+              <!-- 2end -->
+
+              <!-- 3 -->
+              <div style="display:flex;">
+
+                <div>
+                  <input type="radio" id="shopping" name="form" value="shopping">
+                  <label for="shopping">Shopping</label>
+                </div><br><br>
+
+                <div>
+                  <input type="radio" id="travel" name="form" value="travel">
+                  <label for="travel">Travel</label>
+                </div><br><br>
+
+                <div>
+                  <input type="radio" id="entertainmet" name="form" value="entertainmet">
+                  <label for="entertainmet">Entertainment</label>
+                </div><br><br>
+
+              </div><br>
+              <!-- 3end -->
+            </div>
+
+            <!-- income -->
+
+            <div id="income-category">
+
+              <!-- 4 -->
+              <div class="incomeexpense">
+                <div style="display:flex;">
+
+                  <div>
+                    <input type="radio" id="salary" name="form" value="salary">
+                    <label for="salary">Salary</label>
+                  </div><br><br>
+
+                  <div>
+                    <input type="radio" id="bonus" name="form" value="bonus">
+                    <label for="bonus">Bonus</label>
+                  </div><br><br>
+
+                  <div>
+                    <input type="radio" id="accumulation" name="form" value="accumulation">
+                    <label for="accumulation">Accumulation</label>
+                  </div><br><br>
+                  <br>
+                  <!-- 4end -->
+
+
+                  <!-- 5 -->
+
+                </div>
+
+                <div style="display:flex;">
+
+                  <div>
+                    <input type="radio" id="commissions" name="form" value="commissions">
+                    <label for="commissions">Commissions</label>
+                  </div><br><br>
+
+                  <div>
+                    <input type="radio" id="investment" name="form" value="investment">
+                    <label for="investment">Investment</label>
+                  </div><br><br>
+
+
+                  <div>
+                    <input type="radio" id="returns" name="form" value="returns">
+                    <label for="returns">Returns</label>
+                  </div><br>
+
+                </div>
+              </div>
+
+              <!-- 5end -->
+
+
+
+        </fieldset>
+      </form>
+    </div>
+    <!-- select category section ending -->
 
 
 
 
-<!-- second section -->
+
+    <!-- add expense button -->
+
+    <br><br>
+
+    <div class="button">
+
+      <button id="add_expense" type="button"> Add Expense</button>
+
+    </div>
+
+    <br><br>
+  </section>
 
 
+
+<<<<<<< HEAD
+
+=======
 <section class="last-part">
 
 <div id="P">
@@ -231,42 +244,59 @@
   <p style="text-align: left;">Total Income:</p>
   <p> N0.00</p>
 </div>
+>>>>>>> 4383d12db2a0bd2ce5a10d813295e33bb3aa6301
+
+
+  <!-- second section -->
+
+
+  <section class="last-part">
+    <div id="P">
+      <div id="w-s">
+        <p style="text-align: left;">Total Expense:</p>
+        <p> 0.00</p>
+      </div>
+
+      <div id="t-i">
+        <p style="text-align: left;">Total Income:</p>
+        <p> 0.00</p>
+      </div>
 
 <div id="balance">
     <p style="text-align: left;">Net Balance:</p>
     <p> N0.00</p>
   </div>
 
-  
 </div>
 
 
-<!-- expense history table -->
+    <!-- expense history table -->
 
-<div id="expense-history">
- <h4 style="font-size:30px">EXPENSE HISTORY</h4>
- 
- <table id="expenseHistoryTable">
-  <tr>
-    <th>Income/Expense</th>
-    <th>Date</th>
-    <th>Description</th>
-    <th>Amount</th>
-    <th>Location</th>
-    <th>Category</th>
-  </tr>
+    <div id="expense-history">
+      <h4 style="font-size:30px">EXPENSE HISTORY</h4>
 
-<button id="delete-expense">
-  <img src="delete.webp" width="20px" height="20px">
-</button>
+      <table id="expenseHistoryTable">
+        <tr>
+          <th>Income/Expense</th>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Location</th>
+          <th>Category</th>
+        </tr>
 
-</table>
+        <button id="delete-expense">
+          <img src="delete.webp" width="20px" height="20px">
+        </button>
 
-
-</section>
+      </table>
 
 
+  </section>
 
-    <script src="index.js"></script>
+
+
+  <script src="index.js"></script>
 </body>
+
 </html>
