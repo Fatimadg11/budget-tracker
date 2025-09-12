@@ -11,8 +11,6 @@ window.onload = function () {
   submitBtn.addEventListener("click", function (event) {
     event.preventDefault(); 
 
-    const firstName = document.getElementById("firstName").value.trim();
-    const lastName = document.getElementById("lastName").value.trim();
     const email = document.getElementById("email").value.trim();
     const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value.trim();
@@ -30,7 +28,7 @@ window.onload = function () {
 
      
 
-    if (!firstName || !lastName || !email || !username || !password || !confirmPassword) {
+    if (!email || !username || !password || !confirmPassword) {
       alert("Please fill in all fields");
       return;
     }
@@ -41,7 +39,7 @@ window.onload = function () {
     }
 
    
-    const user = { firstName, lastName, email, username, password };
+    const user = {email, username, password };
     localStorage.setItem(username, JSON.stringify(user));
 
     alert("Account created successfully, you can Log in now!");
