@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div id="link">
+            <a href="login.html">Log In</a>
+            <a href="about.html">About Us</a>
+
+        </div>
+    </header>
+
+    <div class="s-container">
+        <form action="http://localhost:3000/signup" method="post">
+            <fieldset>
+                <legend>Sign Up</legend><br><br>
+                <input type="text" id="firstName" placeholder="First name" name="firstname"><br><br>
+                <input type="text" id="lastName" placeholder="Last name"name="lastname"><br><br>
+                <input type="email" id="email" placeholder="Email address" name="email"><br><br>
+                <input type="text" id="username" placeholder=" Create username" name="username"><br><br>
+                <input type="password" id="password" placeholder="Create password" name="password"><br><br>
+                <input type="password" id="confirmPassword" placeholder="Confirm password" name="cpasssword"><br><br>
+                <button id="submit" type="submit"> Sign up </button>
+
+            </fieldset>
+             
+        </form>
+    </div>
+
+    <p>Already have an Account? <a href="login.html" style="color:#efaaae">Log in</a></p>
+
+    <script src="signup.js"></script>
+</body>
+
+</html>
