@@ -62,3 +62,10 @@ p{
 }
 
 
+#l-link{
+  color: #efaaae;
+}
+
+#l-link:hover{
+  text-decoration: underline;
+}

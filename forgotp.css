@@ -1,5 +1,6 @@
 body{
     background: white;
+    overflow-y: scroll;
 }
 
 a{
@@ -31,15 +32,43 @@ p{
   font-size: 19px;
 }
 
-#e-container{
+
+
+legend{
+  font-size: 25px;
+}
+
+#submit{
+ width: 35%;
+ padding: 4px;
+ border-radius: 50px;
+ border-color: gray;
+ background-color:  #FBEAEB;
+ color:black;
+
+}
+
+#email-f-p{
+    padding: 10px 10px 10px 10px;
+    border-radius: 7px;
+    width: 55%;
+}
+
+
+.e-container{
   width: 40%;
   text-align: center;
-  padding-left: 40%;
+  padding-left: 30%;
   height: 40%;
 
 }
 
 
-legend{
-  font-size: 25px;
+#c-link{
+  color: #efaaae;
+padding-left: 23%;
+}
+
+#c-link:hover{
+  text-decoration: underline;
 }

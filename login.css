@@ -62,6 +62,16 @@ legend{
  color:black;
 
 
+}
 
+#f-link{
+  color:black;
+}
 
+#f-link:hover, #c-link:hover{
+  text-decoration: underline;
+}
+
+#c-link{
+  color: #efaaae
 }

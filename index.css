@@ -92,9 +92,8 @@ h2{
   border-style: white;
   width: 40px;
   height: 40px;
-  padding:2px 2px 2px 3px;
-  
-
+  position:absolute;
+  right: calc(12%);
 }
 
 img{
@@ -193,7 +192,6 @@ header{
   border-radius: 12px;
   box-shadow: 6px 6px 6px 6px lightgray;
   margin: auto;
-
   margin-bottom: 90px;
   width: 95%;
   background:  #FBEAEB;
@@ -211,9 +209,4 @@ p{
   text-align: center;
   text-decoration: solid;
   font-size: 19px;
-}
-
-.io{
-
-
 }
