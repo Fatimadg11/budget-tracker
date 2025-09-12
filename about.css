@@ -54,6 +54,20 @@ h1 {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.445);
 }
 
+h2 {
+  text-align: center;
+  color: gray;
+  font: 30px Arial, sans-serif;
+  font-style: italic;
+}
+
+.team-members {
+
+  justify-content: center;
+
+  margin-top: 20px;
+}
+
 footer {
   padding: 20px;
   border-radius: 12px;
