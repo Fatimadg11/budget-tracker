@@ -1,0 +1,45 @@
+body{
+    background: white;
+}
+
+a{
+      color: gray;
+      font-style: normal;
+      margin-right: 90px;
+      text-decoration: none;
+      text-align: right;
+}
+
+header{
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 6px 6px 6px 6px lightgray;
+  margin: auto;
+  margin-bottom: 90px;
+  width: 95%;
+  background:  #FBEAEB;
+  color: gray;
+  text-align: right;
+  font-size: larger;
+
+  
+}
+
+p{
+  text-align: center;
+  text-decoration: solid;
+  font-size: 19px;
+}
+
+#e-container{
+  width: 40%;
+  text-align: center;
+  padding-left: 40%;
+  height: 40%;
+
+}
+
+
+legend{
+  font-size: 25px;
+}
