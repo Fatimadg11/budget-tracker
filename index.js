@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 const amount = parseFloat(document.getElementById("amount").value);
                 const location = document.getElementById("location").value;
                 const category = document.querySelector('input[name="form"]:checked');
+
+
                 if (!radio || !date || !description || isNaN(amount) || amount <= 0 || !location || !category) {
                     alert("Please fill in all fields");
                     return;
