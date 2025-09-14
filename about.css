@@ -24,7 +24,7 @@ a {
 .intro {
   text-align: center;
   height: 70px;
-  width: 100%; 
+  width: 100%;
   position: relative;
   /* top: 0; */
   background-position: center;
@@ -45,8 +45,8 @@ a {
 
 } */
 
-.image{
- border-radius:12px ;
+.image {
+  border-radius: 12px;
 }
 
 /* .team-photo {
@@ -89,7 +89,7 @@ h1 {
   text-decoration: none;
   text-align: center;
   display: flex;
-  background-color: #FBEAEB ;
+  background-color: #FBEAEB;
   margin-right: 30%;
   margin-left: 30%;
   font: 30px;
@@ -150,10 +150,10 @@ body {
 
 
 .hover-image {
-      width: 1300px;
-      height: 350px;
-    }
+  width: 70%;
+  height: 350px;
+}
 
 .hover-image:hover {
-      content: url('download (1).jpeg'); 
-    }
+  content: url('download (1).jpeg');
+}
