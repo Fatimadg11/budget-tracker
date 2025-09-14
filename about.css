@@ -66,10 +66,11 @@ h1 {
   font: 45px Arial, sans-serif;
   /* font-style: italic; */
   background-color: grey;
-  border-radius: 12px;
-  box-shadow: 6px 6px 6px 6px lightgray;
+  border-radius: 5px;
   height: 60px;
-
+  width: 700px;
+  margin-left: 268px;
+  margin-right: 268px;
 }
 
 .subtext {
@@ -101,8 +102,8 @@ h1 {
 h2 {
   text-align: center;
   color: gray;
-  font: 30px Arial, sans-serif;
-  font-style: italic;
+  font: 60px Arial, sans-serif;
+  font-style: oblique;
 }
 
 .team-members {
