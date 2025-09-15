@@ -9,7 +9,11 @@ header {
   color: gray;
   text-align: right;
   font-size: larger;
-
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* height: 60px; */
+  line-height: 20px;
 
 }
 
@@ -71,6 +75,7 @@ h1 {
   width: 700px;
   margin-left: 268px;
   margin-right: 268px;
+    margin-top: 120px;
 }
 
 .subtext {
@@ -78,7 +83,7 @@ h1 {
   font-style: normal;
   text-decoration: none;
   text-align: center;
-
+  
 
 }
 
