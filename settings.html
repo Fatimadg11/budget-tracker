@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Settings</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="login.html">Log Out</a>
+    </header>
+
+    <main class="settings-container">
+        <h1>Profile Settings</h1>
+
+        <!-- Profile Photo Upload -->
+        <section class="profile-photo">
+            <h2>Profile Photo</h2>
+            <input type="file" id="profilePhoto" accept="image/*">
+        </section>
+
+        <!-- Password Form -->
+        <section class="password-settings">
+            <h2>Change Password</h2>
+            <form id="passwordForm">
+                <label for="oldPassword">Old Password:</label>
+                <input type="password" id="oldPassword" required>
+
+                <label for="newPassword">New Password:</label>
+                <input type="password" id="newPassword" required>
+
+                <div class="form-buttons">
+                    <button type="submit">Save</button>
+                    <button type="button" onclick="window.location.href='index.html'">Cancel</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="settings.js"></script>
+</body>
+
+</html>

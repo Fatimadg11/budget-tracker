@@ -1,3 +1,6 @@
+console.log("✅ JS file is connected!");
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const addExpenseButton = document.getElementById("add_expense");
     const expenseHistoryTable = document.querySelector("#expenseHistoryTable");
@@ -13,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let totalIncome = 0;
     let transactionId = 0;
     let selectedRow = null;
+
 
     document.getElementById('date').valueAsDate = new Date();
 
@@ -125,12 +129,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+// ==========================
 // Toggle category display based on expense/income selection
+// ==========================
+
 document.getElementById('expense-radio').addEventListener('change', () => {
     document.getElementById('EI').style.display = 'block';
     document.getElementById('income-category').style.display = 'none';
 });
+// ==========================
 // Update password
+// ==========================
+
 document.getElementById("passwordForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target).entries());
@@ -144,8 +154,10 @@ document.getElementById("passwordForm").addEventListener("submit", async (e) => 
     const result = await res.json();
     alert(result.message);
 });
-
+// ==========================
 // Upload photo
+// ==========================
+
 document.getElementById("photoForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -158,11 +170,35 @@ document.getElementById("photoForm").addEventListener("submit", async (e) => {
     const result = await res.json();
     alert(result.message);
 });
-
+// ==========================
 // Logout
+// ==========================
+
 document.getElementById("logoutBtn").addEventListener("click", async () => {
     const res = await fetch("/logout", { method: "POST" });
     const result = await res.json();
     alert(result.message);
     window.location.href = "/login"; // redirect to login page
+
+});
+
+// ==========================
+//Profile toggle
+// ==========================
+document.addEventListener("DOMContentLoaded", () => {
+    const dropBtn = document.querySelector(".dropbtn");
+    const profileMenu = document.querySelector(".profile-menu");
+
+    if (dropBtn && profileMenu) {
+        dropBtn.addEventListener("click", (event) => {
+            event.stopPropagation();
+            profileMenu.classList.toggle("active");
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!dropBtn.contains(event.target) && !profileMenu.contains(event.target)) {
+                profileMenu.classList.remove("active");
+            }
+        });
+    }
 });
