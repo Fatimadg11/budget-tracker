@@ -1,19 +1,31 @@
-body{
-    background: white;
-    
+body {
+  background: white;
+
 }
 
-a{
-      color: gray;
-      font-style: normal;
-      margin-right: 90px;
-      text-decoration: none;
-      text-align: right;
+a {
+  color: gray;
+  font-style: normal;
+  margin-right: 90px;
+  text-decoration: none;
+  text-align: right;
+}
+
+/* Profile toggle wrapper */
+.profile-toggle {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  color: gray;
+  text-align: right;
+  font-style: normal;
 }
 
 
 
-.first-part, .last-part{
+
+.first-part,
+.last-part {
   padding: 10px;
   border-radius: 12px;
   box-shadow: 12px 12px 12px 12px lightgray;
@@ -24,19 +36,21 @@ a{
   color: gray;
 }
 
-.last-part{height: 400px;}
+.last-part {
+  height: 400px;
+}
 
-#expense-history{
+#expense-history {
   padding-bottom: 70%;
 }
 
-h1{
+h1 {
   padding: 10px;
   background: #FBEAEB;
   border-radius: 12px;
   box-shadow: 10px 10px 10px 10px lightgray;
   margin: auto;
-  width: 50%; 
+  width: 50%;
   text-align: center;
   margin-bottom: 90px;
   height: 70px;
@@ -44,11 +58,11 @@ h1{
   margin-top: 120px;
 
 
- 
+
 }
 
 
-.f-p{
+.f-p {
   text-align: center;
   margin-left: 15%;
   margin-right: 30%;
@@ -57,26 +71,27 @@ h1{
 
 
 
-h2, h4{
-    text-align: center;
+h2,
+h4 {
+  text-align: center;
 
 }
 
-h2{
-  font-size:20px;
+h2 {
+  font-size: 20px;
 }
 
-.ff-p{
+.ff-p {
   margin-right: 9%;
-  margin-left: 11% ;
+  margin-left: 11%;
 }
 
 
- #add_expense{
-  width:85%;
+#add_expense {
+  width: 85%;
   height: 60px;
   padding: 10px 50px 10px 0px;
-  background:  #FBEAEB;
+  background: #FBEAEB;
   border-radius: 12px;
   border-style: groove;
   border-color: lightgray;
@@ -84,10 +99,10 @@ h2{
   font-size: 20px;
   text-align: center;
   margin-left: 6.5%;
-  color:gray;
-} 
+  color: gray;
+}
 
-#delete-expense{
+#delete-expense {
   border-radius: 50%;
   border-style: white;
   width: 40px;
@@ -96,37 +111,42 @@ h2{
   right: calc(12%);
 }
 
-img{
+img {
   width: 20px;
   height: 20px;
   object-fit: fill;
 
 }
 
-.button:hover{
+.button:hover {
   cursor: pointer;
   transform: translateY(-2px);
 }
 
 
- table, th, td, tr {
-  border:1px solid black;
- }
+table,
+th,
+td,
+tr {
+  border: 1px solid black;
+}
 
 
 
-table{
-    width: 70%;
-    background: #FBEAEB;
-    margin: auto;
-    margin-bottom: 40px;
-    border-style: groove;
-    border-color: lightgray;
-    border-width: 2px;
+table {
+  width: 70%;
+  background: #FBEAEB;
+  margin: auto;
+  margin-bottom: 40px;
+  border-style: groove;
+  border-color: lightgray;
+  border-width: 2px;
 
 }
 
-#w-s, #t-i, #balance{
+#w-s,
+#t-i,
+#balance {
   text-align: right;
   padding: 5p 5px 5px 5px;
   background: #FBEAEB;
@@ -136,73 +156,67 @@ table{
   border-style: groove;
   border-color: lightgray;
   border-width: 2px;
-  
+
 }
 
 
-#P{ 
+#P {
   display: flex;
   justify-content: space-between;
   margin-bottom: 10%;
 }
 
-#balance:hover{
-  cursor:pointer;
+#w-s,
+#t-i,
+#balance:hover {
+  cursor: pointer;
   transform: translateY(-2px);
 }
 
-#t-i:hover{
-  cursor:pointer;
-  transform: translateY(-2px);
-}
 
-#w-s:hover{
-  cursor:pointer;
-  transform: translateY(-2px);
-}
 
-#category{
+#category {
   text-align: center;
   width: 30%;
   margin-left: 50%;
 }
 
-#category-container{
+#category-container {
   padding-right: 30%;
 }
 
-.container{
+.container {
   padding-left: 35%;
-  
-  
+
+
 }
 
 
-legend{
+legend {
   font-size: 25px;
 }
 
 
 
-#submit{
- width: 40%;
- padding: 6px;
- border-radius: 50px;
- border-color: gray;
- background-color:  #FBEAEB;
- color:black;
+#submit {
+  width: 40%;
+  padding: 6px;
+  border-radius: 50px;
+  border-color: gray;
+  background-color: #FBEAEB;
+  color: black;
 
 }
 
 
-header{
+header {
   padding: 20px;
   border-radius: 12px;
   box-shadow: 6px 6px 6px 6px lightgray;
   margin: auto;
   margin-bottom: 90px;
   width: 95%;
-  background:  #FBEAEB;
+  background: #FBEAEB;
   color: gray;
   text-align: right;
   font-size: larger;
@@ -213,12 +227,12 @@ header{
   line-height: 20px;
 }
 
-p{
+p {
   text-align: center;
   text-decoration: solid;
   font-size: 19px;
 }
 
-.push{
+.push {
   display: flex;
 }
