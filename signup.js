@@ -46,3 +46,48 @@ window.onload = function () {
     window.location.href = "login.html";
   });
 };
+
+const sendOtpBtn = document.getElementById('send-otp-btn');
+const verifyOtpBtn = document.getElementById('verify-otp-btn');
+const otpInput = document.getElementById('otp');
+
+let generatedOtp = '';
+let userEmail = '';
+
+// Function to generate OTP
+function generateOtp() {
+  generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+  console.log('Generated OTP:', generatedOtp);
+  // Send OTP to user's email (you can use an API for this)
+  // For demonstration purposes, we'll just display the OTP
+  alert(`Your OTP is: ${generatedOtp}`);
+  // In a real application, you'd send the OTP via email using a service like SendGrid or Mailgun
+  // Here's an example using EmailJS:
+  // emailjs.send("service_id", "template_id", {
+  //   to_email: userEmail,
+  //   otp: generatedOtp,
+  // });
+}
+
+// Function to verify OTP
+function verifyOtp() {
+  const userOtp = otpInput.value;
+  if (userOtp === generatedOtp) {
+    alert('OTP verified successfully!');
+    // Proceed with sign-up process
+  } else {
+    alert('Invalid OTP. Please try again.');
+  }
+}
+
+sendOtpBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  userEmail = emailInput.value;
+  generateOtp();
+  verifyOtpBtn.disabled = false;
+});
+
+verifyOtpBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  verifyOtp();
+});
