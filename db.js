@@ -60,37 +60,7 @@ app.listen(3000,(e) => {
 });
 
 
-//endpoint for email
 
 
 
 
-let transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: "YOUR_EMAIL@gmail.com",
-    pass: "YOUR_APP_PASSWORD", // use Gmail App Password, not your real password
-  },
-});
-
-app.post("/send-otp", (req, res) => {
-  const { email, otp } = req.body;
-
-  let mailOptions = {
-    from: "YOUR_EMAIL@gmail.com",
-    to: email,
-    subject: "Your OTP Code",
-    text: `Your OTP is: ${otp}`,
-  };
-
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return res.status(500).send("Error sending email: " + error.toString());
-    }
-    res.status(200).send("OTP sent: " + info.response);
-  });
-});
-
-app.listen(3000, () => {
-  console.log("Server running on port 3000");
-});

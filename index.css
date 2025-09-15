@@ -136,7 +136,7 @@ table{
   border-style: groove;
   border-color: lightgray;
   border-width: 2px;
-
+  
 }
 
 
@@ -146,12 +146,20 @@ table{
   margin-bottom: 10%;
 }
 
-#w-s, #t-i, #balance:hover{
+#balance:hover{
   cursor:pointer;
   transform: translateY(-2px);
 }
 
+#t-i:hover{
+  cursor:pointer;
+  transform: translateY(-2px);
+}
 
+#w-s:hover{
+  cursor:pointer;
+  transform: translateY(-2px);
+}
 
 #category{
   text-align: center;
