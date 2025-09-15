@@ -125,3 +125,44 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+// Toggle category display based on expense/income selection
+document.getElementById('expense-radio').addEventListener('change', () => {
+    document.getElementById('EI').style.display = 'block';
+    document.getElementById('income-category').style.display = 'none';
+});
+// Update password
+document.getElementById("passwordForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    data.userId = 1; // dynamically set from logged-in user
+
+    const res = await fetch("/update-password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+    });
+    const result = await res.json();
+    alert(result.message);
+});
+
+// Upload photo
+document.getElementById("photoForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    formData.append("userId", 1);
+
+    const res = await fetch("/upload-photo", {
+        method: "POST",
+        body: formData,
+    });
+    const result = await res.json();
+    alert(result.message);
+});
+
+// Logout
+document.getElementById("logoutBtn").addEventListener("click", async () => {
+    const res = await fetch("/logout", { method: "POST" });
+    const result = await res.json();
+    alert(result.message);
+    window.location.href = "/login"; // redirect to login page
+});
