@@ -5,6 +5,8 @@ import bcrypt from "bcrypt";
 import {v4 as uuid } from "uuid";
 import path from "path";
 import { fileURLToPath } from "url";
+import nodemailer from "nodemailer"
+import bodyParser from "body-parser"
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,9 +20,9 @@ const db = mysql.createConnection({
 const app = express();
 app.use(express.urlencoded({extended:true}))
 app.use(cors())
-app.use(bcrypt())
-app.use(uuid())
 app.use(express.json())
+app.use(bodyParser.json());
+//dont forget app.use
 
 
 app.post("/signup",(req,res,)=>{
@@ -56,3 +58,9 @@ app.listen(3000,(e) => {
   console.log("Express connected successfully");
 
 });
+
+
+
+
+
+
