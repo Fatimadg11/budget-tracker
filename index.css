@@ -210,3 +210,7 @@ p{
   text-decoration: solid;
   font-size: 19px;
 }
+
+.push{
+  display: flex;
+}
