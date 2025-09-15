@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
             const addExpenseButton = document.getElementById("add_expense");
             const expenseHistoryTable = document.querySelector("#expenseHistoryTable");
-            const totalAmountParagraph = document.querySelector("#w-s p:nth-child(2)");
-            const totalIncomeParagraph = document.querySelector("#t-i p:nth-child(2)");
-            const balanceParagraph = document.querySelector("#balance p:nth-child(2)");
+            const totalAmountParagraph = document.querySelector("#balance p:nth-child(2)");
+            const totalIncomeParagraph = document.querySelector("#w-s p:nth-child(2)");
+            const balanceParagraph = document.querySelector("#t-i p:nth-child(2)");
             const categoryRadios = document.querySelectorAll('input[name="category"]');
             const expenseCategories = document.getElementById('EI');
             const incomeCategories = document.getElementById('income-category');
@@ -23,15 +23,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 const amount = parseFloat(document.getElementById("amount").value);
                 const location = document.getElementById("location").value;
                 const category = document.querySelector('input[name="form"]:checked');
-
+                
 
                 if (!radio || !date || !description || isNaN(amount) || amount <= 0 || !location || !category) {
                     alert("Please fill in all fields");
                     return;
+                
                 }
 
                 if (radio.value === "Income") {
                     totalIncome += amount;
+                    
                     totalIncomeParagraph.innerText = `N${totalIncome.toFixed(2)}`;
                 } else {
                     totalAmount += amount;
@@ -125,3 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
         });
+
+        //about us page
+
