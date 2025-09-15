@@ -25,13 +25,13 @@ a {
   text-align: right;
 }
 
-.intro {
+/* .intro {
   text-align: center;
   height: 70px;
   width: 100%;
   position: relative;
   /* top: 0; */
-  background-position: center;
+  /* background-position: center;
   background-size: cover;
   background-attachment: fixed;
   height: auto;
@@ -41,7 +41,7 @@ a {
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
-}
+} */ */
 
 /* body{
     background: url("download (1).jpeg") no-repeat center;
