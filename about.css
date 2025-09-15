@@ -31,7 +31,7 @@ a {
   width: 100%;
   position: relative;
   /* top: 0; */
-  /* background-position: center;
+/* background-position: center;
   background-size: cover;
   background-attachment: fixed;
   height: auto;
@@ -41,8 +41,8 @@ a {
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
-} */ */
-
+} */
+*/
 /* body{
     background: url("download (1).jpeg") no-repeat center;
     object-fit: contain;
@@ -75,7 +75,7 @@ h1 {
   width: 700px;
   margin-left: 268px;
   margin-right: 268px;
-    margin-top: 120px;
+  margin-top: 120px;
 }
 
 .subtext {
@@ -83,7 +83,7 @@ h1 {
   font-style: normal;
   text-decoration: none;
   text-align: center;
-  
+
 
 }
 
@@ -158,15 +158,12 @@ body {
 .hover-image {
   width: 70%;
   height: 350px;
-  margin-right: 900px;
-  
+  align-items: center;
+  margin-left: 15%;
+  margin-top: 20px;
+
 }
 
 .hover-image:hover {
   content: url('download (1).jpeg');
 }
-
-.alignment{
-  align-items: center;
-}
-
