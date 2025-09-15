@@ -153,8 +153,15 @@ body {
 .hover-image {
   width: 70%;
   height: 350px;
+  margin-right: 900px;
+  
 }
 
 .hover-image:hover {
   content: url('download (1).jpeg');
 }
+
+.alignment{
+  align-items: center;
+}
+
