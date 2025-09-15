@@ -11,19 +11,29 @@
 
 <body>
 
-<!-- header -->
- <header>  
-<a href="about.html">About Us</a>
-<a href="login.html">Log Out</a>
- </header>
+  <!-- header -->
+  <header>
+    <a href="about.html">About Us</a>
+
+
+    <div class="profile-toggle">
+      Profile
+      <div class="profile-menu">
+        <a href="profile-menu">Edit Profile</a>
+        <a href="settings.html">Settings</a>
+        <a href="login.html">Log Out</a>
+
+      </div>
+    </div>
+  </header>
 
 
 
   <!-- first section beggining -->
 
 
-<h1 class="io">Weekly Budget Tracker</h1> 
-<section class="first-part">
+  <h1 class="io">Weekly Budget Tracker</h1>
+  <section class="first-part">
 
 
     <h2 style="font-size: 40px;">Add New Expense</h2>
@@ -217,7 +227,7 @@
 
 
 
-<!-- <section class="last-part">
+  <!-- <section class="last-part">
 
 <div id="P">
 <div id="balance">
@@ -247,36 +257,36 @@
         <p> 0.00</p>
       </div>
 
-  <div id="balance">
-    <p style="text-align: left;">Net Balance:</p>
-    <p> N0.00</p>
-  </div>
+      <div id="balance">
+        <p style="text-align: left;">Net Balance:</p>
+        <p> N0.00</p>
+      </div>
 
-  </div>
+    </div>
 
- 
+
     <!-- expense history table -->
 
     <div id="expense-history">
       <h4 style="font-size:30px">EXPENSE HISTORY</h4>
 
       <div class="push">
-      <table id="expenseHistoryTable">
-        <tr>
-          <th>Income/Expense</th>
-          <th>Date</th>
-          <th>Description</th>
-          <th>Amount</th>
-          <th>Location</th>
-          <th>Category</th>
-        </tr>
+        <table id="expenseHistoryTable">
+          <tr>
+            <th>Income/Expense</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Location</th>
+            <th>Category</th>
+          </tr>
 
         </table>
         <button id="delete-expense">
           <img src="delete.webp" width="20px" height="20px">
         </button>
-        </div>
-      
+      </div>
+
     </div>
 
   </section>
