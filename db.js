@@ -93,7 +93,7 @@ app.post("/signup", async (req, res) => {
   const userId = uuid();
 
   const query =
-    "INSERT INTO users (id, email, username, password) VALUES (?, ?, ?, ?)";
+    "INSERT INTO users (id, email, username, passwords) VALUES (?, ?, ?, ?)";
 
   db.query(query, [userId, email, username, hashedPassword], (err, result) => {
     if (err) {

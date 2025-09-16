@@ -127,7 +127,11 @@ window.onload = function () {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, username, password }),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        console.log(res) 
+        return res.json()
+
+      })
       .then((data) => {
         alert(data.message || "Account created successfully!");
         window.location.href = "login.html";
