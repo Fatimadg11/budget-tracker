@@ -10,3 +10,14 @@
 
 
 
+        // <div>
+        //     <label class="Category" for="expense-category">Category:</label>
+        //     <select id="expense-category" name="Category">
+        //         <option value="food">Food</option>
+        //         <option value="transport">Transport</option>
+        //         <option value="entertainment">Entertainment</option>
+        //         <option value="bills">Bills</option>
+        //         <option value="other">Other</option>
+        //     </select>
+        // </div>
+        
