@@ -1,6 +1,33 @@
+header {
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 6px 6px 6px 6px lightgray;
+    margin: auto;
+    margin-bottom: 90px;
+    width: 95%;
+    background: #FBEAEB;
+    color: gray;
+    text-align: right;
+    font-size: larger;
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* height: 60px; */
+    line-height: 20px;
+}
+
+a {
+    color: gray;
+    font-style: normal;
+    margin-right: 90px;
+    text-decoration: none;
+    text-align: right;
+}
+
 .settings-container {
     max-width: 600px;
     margin: 40px auto;
+    margin-top: 10%;
     padding: 20px;
     background: #f9f9f9;
     border-radius: 12px;
@@ -48,4 +75,35 @@
 
 .form-buttons button[type="button"] {
     background: #ccc;
+}
+
+.profile-photo {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 100px;
+    margin-left: 200px;
+
+}
+
+.profilephoto {
+    display: block;
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    margin-left: 90px;
+}
+
+.password-settings {
+    margin-top: 70px;
+}
+
+h3 {
+    margin-left: 160%;
+    margin-top: -8%;
+    height: auto;
+    width: 100%;
 }

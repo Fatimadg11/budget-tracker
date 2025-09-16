@@ -194,18 +194,18 @@ document.addEventListener("DOMContentLoaded", () => {
 // Upload photo
 // ==========================
 
-document.getElementById("photoForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    formData.append("userId", 1);
+// document.getElementById("photoForm").addEventListener("submit", async (e) => {
+//     e.preventDefault();
+//     const formData = new FormData(e.target);
+//     formData.append("userId", 1);
 
-    const res = await fetch("/upload-photo", {
-        method: "POST",
-        body: formData,
-    });
-    const result = await res.json();
-    alert(result.message);
-});
+//     const res = await fetch("/upload-photo", {
+//         method: "POST",
+//         body: formData,
+//     });
+//     const result = await res.json();
+//     alert(result.message);
+// });
 // ==========================
 // Logout
 // ==========================
@@ -222,18 +222,34 @@ document.getElementById("logoutBtn").addEventListener("click", async () => {
 //Profile toggle
 // ==========================
 document.addEventListener("DOMContentLoaded", () => {
-    const profileMenu = document.getElementById("profile-menu");
+    const profileToggle = document.querySelector(".profile-toggle");
+    const dropbtn = document.querySelector(".dropbtn");
 
-    if (profileMenu) {
-        profileMenu.addEventListener("change", (e) => {
-            const selected = e.target.value;
-            if (selected) {
-                window.location.href = selected; // redirect to page
-            }
+    // Toggle dropdown on button click
+    if (dropbtn) {
+        dropbtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            profileToggle.classList.toggle("active");
         });
     }
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest('.profile-toggle')) {
+            profileToggle.classList.remove("active");
+        }
+    });
+
+    // Close dropdown when a menu item is clicked (optional)
+    const dropdownItems = document.querySelectorAll(".dropdown-content a");
+    dropdownItems.forEach(item => {
+        item.addEventListener("click", () => {
+            profileToggle.classList.remove("active");
+        });
+    });
 });
 
-document.querySelector(".profile-toggle").addEventListener("click", function () {
-    this.classList.toggle("active");
-});
+
+
+
+
