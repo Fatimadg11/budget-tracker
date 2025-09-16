@@ -16,14 +16,24 @@
     <a href="about.html">About Us</a>
 
 
-    <div class="profile-toggle">
-      <button class="dropbtn">Profile ▼</button>
-      <div class="profile-menu">
+    <!-- <div class="profile-toggle">
+       <button class="">Profile ▼</button>
+      <div class="">
         <a href="settings.html">Edit Profile</a>
         <a href="settings.html">Settings</a>
         <a href="login.html">Log Out</a>
       </div>
+    </div> -->
+    <div class="profile-toggle">
+      <label for="profile-menu" class="dropbtn">Profile:</label>
+      <select id="profile-menu" name="profile-menu">
+        <option value="">-- Select --</option>
+        <option value="settings.html">Edit Profile</option>
+        <option value="settings.html">Settings</option>
+        <option value="login.html">Log Out</option>
+      </select>
     </div>
+
   </header>
 
 

@@ -141,19 +141,55 @@ document.getElementById('expense-radio').addEventListener('change', () => {
 // Update password
 // ==========================
 
-document.getElementById("passwordForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.target).entries());
-    data.userId = 1; // dynamically set from logged-in user
+document.addEventListener("DOMContentLoaded", () => {
+    const passwordForm = document.getElementById("passwordForm");
 
-    const res = await fetch("/update-password", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-    });
-    const result = await res.json();
-    alert(result.message);
+    if (passwordForm) {
+        passwordForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const oldPass = document.getElementById("oldPassword").value;
+            const newPass = document.getElementById("newPassword").value;
+
+            // Validation
+            if (newPass.length < 6) {
+                alert("❌ New password must be at least 6 characters.");
+                return;
+            }
+
+            try {
+                // Send to backend
+                const res = await fetch("/update-password", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        userId: 1, // replace with dynamic logged-in user ID
+                        oldPassword: oldPass,
+                        newPassword: newPass,
+                    }),
+                });
+
+                if (!res.ok) {
+                    throw new Error("Network error or server not available");
+                }
+
+                const result = await res.json();
+
+                if (result.success) {
+                    alert("✅ " + result.message);
+                    passwordForm.reset();
+                } else {
+                    alert("❌ " + result.message);
+                }
+
+            } catch (err) {
+                console.error("Update password error:", err);
+                alert("⚠️ Could not update password. Check console for details.");
+            }
+        });
+    }
 });
+
 // ==========================
 // Upload photo
 // ==========================
@@ -186,19 +222,18 @@ document.getElementById("logoutBtn").addEventListener("click", async () => {
 //Profile toggle
 // ==========================
 document.addEventListener("DOMContentLoaded", () => {
-    const dropBtn = document.querySelector(".dropbtn");
-    const profileMenu = document.querySelector(".profile-menu");
+    const profileMenu = document.getElementById("profile-menu");
 
-    if (dropBtn && profileMenu) {
-        dropBtn.addEventListener("click", (event) => {
-            event.stopPropagation();
-            profileMenu.classList.toggle("active");
-        });
-
-        document.addEventListener("click", (event) => {
-            if (!dropBtn.contains(event.target) && !profileMenu.contains(event.target)) {
-                profileMenu.classList.remove("active");
+    if (profileMenu) {
+        profileMenu.addEventListener("change", (e) => {
+            const selected = e.target.value;
+            if (selected) {
+                window.location.href = selected; // redirect to page
             }
         });
     }
+});
+
+document.querySelector(".profile-toggle").addEventListener("click", function () {
+    this.classList.toggle("active");
 });
