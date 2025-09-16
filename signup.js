@@ -120,7 +120,8 @@ window.onload = function () {
       alert("Passwords do not match");
       return;
     }
-
+    //make sure the name is all in capital letter or small letter so that someone will not put something like Fatima and later fAtima
+    
     // Send to server
     fetch("http://localhost:3000/signup", {
       method: "POST",

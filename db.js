@@ -86,6 +86,7 @@ app.post("/signup", async (req, res) => {
   if (!email || !username || !password) {
     return res.status(400).json({ message: "Missing fields" });
   }
+  //check is username and password is in the db ask chatgpt to help with the command if it exist then it should show username or password exist
 
   // Hash password
   const hashedPassword = await bcrypt.hash(password, 10);
@@ -103,6 +104,9 @@ app.post("/signup", async (req, res) => {
     res.json({ message: "User registered successfully" });
   });
 });
+
+//create a post for login route
+
 
 // Start server
 app.listen(3000, () => {

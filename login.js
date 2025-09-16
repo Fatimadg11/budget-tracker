@@ -23,7 +23,8 @@ window.onload = function () {
       alert("Please enter both username and password");
       return;
     }
-
+    //use fetch just like signup js but the body should just pass the username and password
+    
     const storedUser = localStorage.getItem(username);
     console.log("Stored user:", storedUser);
 
