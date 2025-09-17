@@ -36,7 +36,7 @@ window.onload = function () {
     const user = JSON.parse(storedUser);
 
     if (user.password === password) {
-      alert(`Welcome, ${user.firstName}!`);
+      alert(`Welcome, ${user.username}!`);
        window.location.href = "index.html";
     } else {
       alert("Incorrect password. Try again.");
