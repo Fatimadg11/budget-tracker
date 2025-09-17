@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Weekly Budget Tracker</title>
+  <title>EXPENSELY</title>
   <link rel="stylesheet" href="index.css">
 
 </head>
@@ -13,295 +13,102 @@
 
   <!-- header -->
   <header>
+    <h1 class="io">EXPENSELY</h1>
     <a href="about.html">About Us</a>
-
-
-    <!-- <div class="profile-toggle">
-       <button class="">Profile ▼</button>
-      <div class="">
-        <a href="settings.html">Edit Profile</a>
+    <div class="profile-toggle">
+      <button>Profile ▼</button>
+      <div class="dropdown-content">
         <a href="settings.html">Settings</a>
         <a href="login.html">Log Out</a>
-      </div>
-    </div> -->
-    <div class="profile-toggle">
+        <!-- <a href="#" id="logoutBtn">Log Out</a> -->
 
-      <div class="dropdown-content">
-        <!-- <a href="settings.html"><i></i> Edit Profile</a> -->
-        <a href="settings.html"><i></i> Settings</a>
-        <a href="login.html"><i></i> Log Out</a>
       </div>
     </div>
-
   </header>
 
+  <!-- first section -->
 
-
-
-  <!-- first section beggining -->
-
-
-  <h1 class="io">Weekly Budget Tracker</h1>
   <section class="first-part">
+    <h2>Add New Expense</h2>
 
+    <!-- income/expense -->
+    <form id="category">
+      <fieldset>
+        <label><input type="radio" name="category" value="Expense" id="expense-radio"> Expense</label>
+        <label><input type="radio" name="category" value="Income" id="income-radio"> Income</label>
+      </fieldset>
+    </form>
 
-    <h2 style="font-size: 40px;">Add New Expense</h2>
-    <div class="ff-p">
+    <!-- details -->
+    <input type="date" id="date">
+    <input type="text" placeholder="What was it?" id="description">
+    <input type="number" placeholder="How much was it?" id="amount">
+    <input type="text" placeholder="Where?" id="location">
 
+    <!-- category selection -->
+    <form>
+      <fieldset>
+        <legend>Select Category</legend>
+        <div class="incomeexpense">
+          <label><input type="radio" name="form" value="Food"> Food</label>
+          <label><input type="radio" name="form" value="Transport"> Transport</label>
+          <label><input type="radio" name="form" value="Loans"> Loans</label>
+          <label><input type="radio" name="form" value="Vehicle"> Vehicle</label>
+          <label><input type="radio" name="form" value="Accomodation"> Accomodation</label>
+          <label><input type="radio" name="form" value="Clothing"> Clothing</label>
+          <label><input type="radio" name="form" value="Shopping"> Shopping</label>
+          <label><input type="radio" name="form" value="Travel"> Travel</label>
+          <label><input type="radio" name="form" value="Entertainment"> Entertainment</label>
+        </div>
 
-      <!-- income/expense -->
+        <div class="incomeexpense">
+          <label><input type="radio" name="form" value="Salary"> Salary</label>
+          <label><input type="radio" name="form" value="Bonus"> Bonus</label>
+          <label><input type="radio" name="form" value="Accumulation"> Accumulation</label>
+          <label><input type="radio" name="form" value="Commissions"> Commissions</label>
+          <label><input type="radio" name="form" value="Investment"> Investment</label>
+          <label><input type="radio" name="form" value="Returns"> Returns</label>
+        </div>
+      </fieldset>
+    </form>
 
-      <div id="category-container">
-        <form id="category">
-          <fieldset>
-            <label>
-              <input type="radio" name="category" value="Expense" id="expense-radio"> Expense
-            </label>
-
-            <label>
-              <input type="radio" name="category" value="Income" id="income-radio"> Income
-            </label>
-          </fieldset>
-        </form>
-      </div><br><br>
-
-      <!-- other buttons -->
-
-      Date:<input type="date" id="date">
-      Description:<input type="text" placeholder="What was it?" id="description">
-      Amount:<input type="number" placeholder="How much was it?" id="amount">
-      Location:<input type="text" placeholder="Where?" id="location">
-
-    </div>
-    <br><br>
-
-
-
-
-
-    <!-- select category section -->
-
-
-    <div class="f-p">
-      <form>
-        <fieldset style="width: 700px;">
-          <legend>Select Category</legend>
-
-          <!-- expense -->
-          <div id="EI">
-            <div class="incomeexpense">
-              <!-- 1  -->
-              <div style="display:flex;">
-                <div>
-                  <input type="radio" id="food" name="form" value="Food">
-                  <label for="Food">Food</label>
-                </div><br><br>
-
-                <div>
-                  <input type="radio" id="transport" name="form" value="Transport">
-                  <label for="Transport">Transport</label>
-                </div><br><br>
-
-                <div>
-                  <input type="radio" id="loans" name="form" value="Loans">
-                  <label for="Loans">Loans</label>
-                </div><br><br>
-
-              </div><br>
-              <!-- 1end -->
-
-
-              <!-- 2 -->
-              <div style="display:flex;">
-
-                <div>
-                  <input type="radio" id="vehicle" name="form" value="vehicle">
-                  <label for="vehicle">Vehicle</label>
-                </div><br><br>
-
-                <div>
-                  <input type="radio" id="Accomodation" name="form" value="Accomodation">
-                  <label for="Accomodation">Accomodation</label>
-                </div><br><br>
-
-                <div>
-                  <input type="radio" id="clothing" name="form" value="clothing">
-                  <label for="clothing">Clothing</label>
-                </div><br><br>
-
-              </div><br>
-              <!-- 2end -->
-
-              <!-- 3 -->
-              <div style="display:flex;">
-
-                <div>
-                  <input type="radio" id="shopping" name="form" value="shopping">
-                  <label for="shopping">Shopping</label>
-                </div><br><br>
-
-                <div>
-                  <input type="radio" id="travel" name="form" value="travel">
-                  <label for="travel">Travel</label>
-                </div><br><br>
-
-                <div>
-                  <input type="radio" id="entertainmet" name="form" value="entertainmet">
-                  <label for="entertainmet">Entertainment</label>
-                </div><br><br>
-
-              </div><br>
-              <!-- 3end -->
-            </div>
-
-            <!-- income -->
-
-            <div id="income-category">
-
-              <!-- 4 -->
-              <div class="incomeexpense">
-                <div style="display:flex;">
-
-                  <div>
-                    <input type="radio" id="salary" name="form" value="salary">
-                    <label for="salary">Salary</label>
-                  </div><br><br>
-
-                  <div>
-                    <input type="radio" id="bonus" name="form" value="bonus">
-                    <label for="bonus">Bonus</label>
-                  </div><br><br>
-
-                  <div>
-                    <input type="radio" id="accumulation" name="form" value="accumulation">
-                    <label for="accumulation">Accumulation</label>
-                  </div><br><br>
-                  <br>
-                  <!-- 4end -->
-
-
-                  <!-- 5 -->
-
-                </div>
-
-                <div style="display:flex;">
-
-                  <div>
-                    <input type="radio" id="commissions" name="form" value="commissions">
-                    <label for="commissions">Commissions</label>
-                  </div><br><br>
-
-                  <div>
-                    <input type="radio" id="investment" name="form" value="investment">
-                    <label for="investment">Investment</label>
-                  </div><br><br>
-
-
-                  <div>
-                    <input type="radio" id="returns" name="form" value="returns">
-                    <label for="returns">Returns</label>
-                  </div><br>
-
-                </div>
-              </div>
-
-              <!-- 5end -->
-
-
-
-        </fieldset>
-      </form>
-    </div>
-    <!-- select category section ending -->
-
-
-
-
-
-    <!-- add expense button -->
-
-    <br><br>
-
-    <div class="button">
-
-      <button id="add_expense" type="button"> Add Expense</button>
-
-    </div>
-
-    <br><br>
+    <!-- add button -->
+    <button id="add_expense" type="button">Add Expense</button>
   </section>
 
-
-
-
-
-
-  <!-- <section class="last-part">
-
-<div id="P">
-<div id="balance">
-  <p style="text-align: left;">Total Expense:</p>
-  <p> N.00</p>
-</div>
-
-<div id="balance">
-  <p style="text-align: left;">Total Income:</p>
-  <p> N0.00</p>
-</div> -->
-
-
-
   <!-- second section -->
-
-
   <section class="last-part">
     <div id="P">
       <div id="t-i">
-        <p style="text-align: left;">Total Expense:</p>
-        <p> 0.00</p>
+        <p>Total Expense:</p>
+        <p>0.00</p>
       </div>
-
       <div id="w-s">
-        <p style="text-align: left;">Total Income:</p>
-        <p> 0.00</p>
+        <p>Total Income:</p>
+        <p>0.00</p>
       </div>
-
       <div id="balance">
-        <p style="text-align: left;">Net Balance:</p>
-        <p> N0.00</p>
+        <p>Net Balance:</p>
+        <p>0.00</p>
       </div>
-
-    </div>
     </div>
 
-
-    <!-- expense history table -->
-
+    <!-- expense history -->
     <div id="expense-history">
-      <h4 style="font-size:30px">EXPENSE HISTORY</h4>
-
-      <div class="push">
-        <table id="expenseHistoryTable">
-          <tr>
-            <th>Income/Expense</th>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Amount</th>
-            <th>Location</th>
-            <th>Category</th>
-          </tr>
-
-        </table>
-        <button id="delete-expense">
-          <img src="delete.webp" width="20px" height="20px">
-        </button>
-      </div>
-
+      <h2>Expense History</h2>
+      <table id="expenseHistoryTable">
+        <tr>
+          <th>Income/Expense</th>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Location</th>
+          <th>Category</th>
+        </tr>
+      </table>
+      <button id="delete-expense"><img src="delete.webp" width="20" height="20"></button>
     </div>
-
   </section>
-
-
 
   <script src="index.js"></script>
 </body>

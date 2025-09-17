@@ -210,13 +210,13 @@ document.addEventListener("DOMContentLoaded", () => {
 // Logout
 // ==========================
 
-document.getElementById("logoutBtn").addEventListener("click", async () => {
-    const res = await fetch("/logout", { method: "POST" });
-    const result = await res.json();
-    alert(result.message);
-    window.location.href = "/login"; // redirect to login page
+// document.getElementById("logoutBtn").addEventListener("click", async () => {
+//     const res = await fetch("/logout", { method: "POST" });
+//     const result = await res.json();
+//     alert(result.message);
+//     window.location.href = "/login"; // redirect to login page
 
-});
+// });
 
 // ==========================
 //Profile toggle
@@ -248,6 +248,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const profileToggle = document.querySelector(".profile-toggle button");
+    const dropdown = document.querySelector(".dropdown-content");
+
+    profileToggle.addEventListener("click", () => {
+        dropdown.style.display =
+            dropdown.style.display === "block" ? "none" : "block";
+    });
+
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(".profile-toggle")) {
+            dropdown.style.display = "none";
+        }
+    });
+});
+
 
 
 
