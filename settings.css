@@ -1,91 +1,160 @@
+/* Reuse the exact same theme variables */
+:root {
+    --primary: #FBEAEB;
+    --secondary: #eaa0a9;
+    --light: #f9f9f9;
+    --dark: #4a4a4a;
+    --light-gray: #f0f0f0;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --smooth-transition: all 0.3s ease;
+}
+
+/* Body */
+body {
+    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+    color: var(--dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+/* Header (same as index) */
 header {
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 6px 6px 6px 6px lightgray;
-    margin: auto;
-    margin-bottom: 90px;
-    width: 95%;
-    background: #FBEAEB;
-    color: gray;
-    text-align: right;
-    font-size: larger;
-    position: fixed;
+    background: linear-gradient(120deg, var(--primary), var(--secondary));
+    padding: 18px 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: var(--card-shadow);
+    position: sticky;
     top: 0;
-    left: 0;
-    /* height: 60px; */
-    line-height: 20px;
+    z-index: 1000;
+    border-radius: 0 0 12px 12px;
+    height: 50px;
 }
 
-a {
-    color: gray;
-    font-style: normal;
-    margin-right: 90px;
+header a {
     text-decoration: none;
-    text-align: right;
+    color: white;
+    font-weight: 600;
+    margin-right: 20px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: var(--smooth-transition);
 }
 
+header a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Settings container styled like index cards */
 .settings-container {
     max-width: 600px;
     margin: 40px auto;
-    margin-top: 10%;
+    /* offset for fixed header */
     padding: 20px;
-    background: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    animation: fadeIn 0.5s ease-out;
 }
 
+/* Titles */
 .settings-container h1 {
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--secondary);
+    font-weight: 700;
+    border-bottom: 2px solid var(--light-gray);
+    padding-bottom: 10px;
 }
 
+.settings-container h3 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    color: var(--secondary);
+}
+
+/* Sections */
 .settings-container section {
     margin-bottom: 30px;
 }
 
+/* Labels & Inputs */
 .settings-container label {
     display: block;
-    margin: 10px 0 5px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--dark);
 }
 
 .settings-container input {
-    width: 100%;
+    width: 90%;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--light-gray);
     border-radius: 6px;
     margin-bottom: 15px;
+    font-size: 16px;
+    transition: var(--smooth-transition);
 }
 
+.settings-container input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.2);
+}
+
+/* Buttons (exact same as index) */
 .form-buttons {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
 }
 
 .form-buttons button {
-    padding: 10px 15px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 6px;
+    border-radius: 10px;
     cursor: pointer;
+    font-weight: 600;
+    transition: var(--smooth-transition);
 }
 
 .form-buttons button[type="submit"] {
-    background: lightpink;
+    background: linear-gradient(120deg, var(--primary), var(--secondary));
     color: white;
+    box-shadow: 0 4px 12px rgba(255, 182, 193, 0.3);
+}
+
+.form-buttons button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 182, 193, 0.4);
 }
 
 .form-buttons button[type="button"] {
-    background: #ccc;
+    background: lightgray;
+    color: #333;
 }
 
+.form-buttons button[type="button"]:hover {
+    background: gray;
+    color: white;
+}
+
+/* Profile Photos */
 .profile-photo {
-    display: block;
+    display: flex;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 100px;
-    margin-left: 200px;
-
+    margin-left: 300px;
+    border: 3px solid var(--primary);
+    box-shadow: var(--card-shadow);
 }
 
 .profilephoto {
@@ -95,14 +164,29 @@ a {
     object-fit: cover;
     margin-bottom: 10px;
     margin-left: 90px;
+    /* border: 2px solid var(--light-gray); */
+    /* box-shadow: var(--card-shadow); */
+}
+
+/* Animation (same as index) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .password-settings {
-    margin-top: 70px;
+    margin-top: 100px;
 }
 
 h3 {
-    margin-left: 160%;
+    margin-left: 300px;
     margin-top: -8%;
     height: auto;
     width: 100%;
