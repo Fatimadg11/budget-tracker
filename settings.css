@@ -104,12 +104,13 @@ h1.io {
     font-weight: 600;
     margin-bottom: 8px;
     color: var(--dark);
+
 }
 
 .settings-container input {
     width: 90%;
     padding: 10px;
-    border: 1px solid var(--light-gray);
+    border: 2px solid var(--light-gray);
     border-radius: 6px;
     margin-bottom: 15px;
     font-size: 16px;
@@ -117,9 +118,9 @@ h1.io {
 }
 
 .settings-container input:focus {
-    border-color: var(--primary);
+    border-color: var(--secondary);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.2);
+    box-shadow: 0 0 0 3px rgba(232, 62, 140, 0.2);
 }
 
 /* Buttons (exact same as index) */
