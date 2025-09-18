@@ -3,14 +3,7 @@ import express from "express";
 import cors from "cors";
 import bcrypt from "bcrypt";
 import { v4 as uuid } from "uuid";
-import multer from "multer";
-import path from "path";
-import { fileURLToPath } from "url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-// ✅ DB connection
 const db = mysql.createConnection({
   host: "localhost",
   user: "fatimadg",
@@ -21,6 +14,13 @@ const db = mysql.createConnection({
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+app.use(session({
+  secret: "supersecret",       // change in real app
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }    // true only if HTTPS
+}));
 
 // ✅ Multer setup for uploads
 const storage = multer.diskStorage({
@@ -145,34 +145,12 @@ app.post("/update-password", async (req, res) => {
   });
 });
 
-
-
-// ============================
-// PHOTO UPLOAD
-// ============================
-app.post("/upload-photo/:userId", upload.single("photo"), (req, res) => {
-  const { userId } = req.params;
-
-  if (!req.file) {
-    return res.status(400).json({ success: false, message: "No file uploaded" });
-  }
-
-  const photoUrl = `/uploads/${req.file.filename}`;
-
-  // ✅ Save photo path to DB
-  const query = "UPDATE users SET photo = ? WHERE id = ?";
-  db.query(query, [photoUrl, userId], (err) => {
-    if (err) {
-      console.error("DB error:", err);
-      return res.status(500).json({ success: false, message: "DB update error" });
-    }
-    res.json({ success: true, url: photoUrl });
-  });
+// Login route (placeholder)
+app.post("/login", (req, res) => {
+  res.json({ message: "Login route coming soon" });
 });
 
-// ============================
-// SERVER START
-// ============================
+// Start server
 app.listen(3000, () => {
   db.connect((e) => {
     if (e) throw e;
