@@ -12,8 +12,10 @@
 <body>
 
     <header>
-            <a href="login.html">Log In</a>
-            <a href="about.html">About Us</a>
+        <h1 class="io">EXPENSELY</h1>
+
+        <a href="login.html">Log In</a>
+        <a href="about.html">About Us</a>
 
     </header>
 
@@ -35,28 +37,29 @@
              
         </form> -->
         <form id="signup-form">
-  <fieldset>
-    <legend>Sign Up</legend><br><br>
-    <input type="email" id="email" placeholder="Email address" name="email"><br><br>
-    <input type="text" id="username" placeholder="Create username" name="username"><br><br>
-    <input type="password" id="password" placeholder="Create password" name="password"><br><br>
-    <input type="password" id="confirmPassword" placeholder="Confirm password" name="confirmPassword"><br><br>
+            <fieldset>
+                <legend>Sign Up</legend><br><br>
+                <input type="email" id="email" placeholder="Email address" name="email"><br><br>
+                <input type="text" id="username" placeholder="Create username" name="username"><br><br>
+                <input type="password" id="password" placeholder="Create password" name="password"><br><br>
+                <input type="password" id="confirmPassword" placeholder="Confirm password"
+                    name="confirmPassword"><br><br>
 
-    <button id="send-otp-btn">Send OTP</button><br><br>
+                <button id="send-otp-btn">Send OTP</button><br><br>
 
-    <label for="otp">OTP:</label>
-    <input type="text" id="otp" name="otp" disabled><br><br>
+                <label for="otp">OTP:</label>
+                <input type="text" id="otp" name="otp" disabled><br><br>
 
-    <button id="verify-otp-btn" disabled>Verify OTP</button>
-    <button id="submit" type="submit">Sign up</button>
-  </fieldset>
-</form>
+                <button id="verify-otp-btn" disabled>Verify OTP</button>
+                <button id="submit" type="submit">Sign up</button>
+            </fieldset>
+        </form>
 
     </div>
 
-    <p>Already have an Account? <a href="login.html"  id="l-link">Log in</a></p>
+    <p>Already have an Account? <a href="login.html" id="l-link">Log in</a></p>
 
     <script src="signup.js"></script>
 </body>
 
-</html> 
+</html>
