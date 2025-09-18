@@ -3,15 +3,14 @@ import express from "express";
 import cors from "cors";
 import bcrypt from "bcrypt";
 import { v4 as uuid } from "uuid";
-import session from "express-session"
+import session from "express-session";
 import path from "path";
 import { fileURLToPath } from "url";
-
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
+// ✅ MySQL connection
 const db = mysql.createConnection({
   host: "localhost",
   user: "fatimadg",
@@ -20,17 +19,21 @@ const db = mysql.createConnection({
 });
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: "http://localhost:5500", credentials: true })); // adjust origin to your frontend
 app.use(express.json());
 
-app.use(session({
-  secret: "supersecret",       // change in real app
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false }    // true only if HTTPS
-}));
+app.use(
+  session({
+    secret: "supersecret", // change this in production
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false }, // true only with HTTPS
+  })
+);
 
-// Signup route
+// ==========================
+// SIGNUP
+// ==========================
 app.post("/signup", async (req, res) => {
   const { email, username, password } = req.body;
 
@@ -38,69 +41,82 @@ app.post("/signup", async (req, res) => {
     return res.status(400).json({ message: "Missing fields" });
   }
 
-  // ✅ Check if username or password already exists
-  const checkQuery =
-    "SELECT * FROM users WHERE username = ? OR passwords = ?";
-  db.query(checkQuery, [username, password], async (err, results) => {
+  // ✅ Check if user already exists
+  const checkQuery = "SELECT * FROM users WHERE username = ? OR email = ?";
+  db.query(checkQuery, [username, email], async (err, results) => {
     if (err) {
       console.error("DB error:", err);
       return res.status(500).json({ message: "Database error" });
     }
 
     if (results.length > 0) {
-      return res
-        .status(400)
-        .json({ message: "Username or password already exists" });
+      return res.status(400).json({ message: "Username or email already exists" });
     }
 
-    // ✅ If not exist, hash password
+    // ✅ Hash password and insert
     const hashedPassword = await bcrypt.hash(password, 10);
     const userId = uuid();
 
     const insertQuery =
       "INSERT INTO users (id, email, username, passwords) VALUES (?, ?, ?, ?)";
-
-    db.query(
-      insertQuery,
-      [userId, email, username, hashedPassword],
-      (err, result) => {
-        if (err) {
-          console.error("Insert error:", err);
-          return res.status(500).json({ message: "DB insert error" });
-        }
-        res.json({ message: "User registered successfully" });
+    db.query(insertQuery, [userId, email, username, hashedPassword], (err) => {
+      if (err) {
+        console.error("Insert error:", err);
+        return res.status(500).json({ message: "DB insert error" });
       }
-    );
+      res.json({ message: "User registered successfully" });
+    });
   });
 });
 
+// ==========================
+// LOGIN
+// ==========================
+app.post("/login", (req, res) => {
+  const { username, password } = req.body;
 
+  const command = "SELECT * FROM users WHERE username = ?";
+  db.query(command, [username], async (error, result) => {
+    if (error) {
+      console.error("DB error:", error);
+      return res.status(500).json({ error: "Database error" });
+    }
 
-app.post("/login", async (req,res)=>{
-const user = req.body
-console.log(user)
-const command = "select * from users where username = ?"
- 
- db.query(command, [user.username],(error,result)=>{
-   if (error) throw error
-   if(result[0]?.id){
-       const comparepass = bcrypt.compareSync(user.password,result[0].passwords)
-       if(comparepass){
-        const user = result[0]?.id
-          req.session.userid = user
-          res.json(result[0])
-       }else{
-          res.json({error:"authentication failed"})
-       }
-   }
+    if (result.length === 0) {
+      return res.status(400).json({ error: "User not found" });
+    }
 
-   
-  
-})
+    const isMatch = await bcrypt.compare(password, result[0].passwords);
+    if (!isMatch) {
+      return res.status(400).json({ error: "Invalid credentials" });
+    }
 
-})
+    // ✅ Save user in session
+    req.session.userId = result[0].id;
 
-// Start server
+    res.json({
+      id: result[0].id,
+      username: result[0].username,
+      email: result[0].email,
+      message: "Login successful",
+    });
+  });
+});
+
+// ==========================
+// LOGOUT
+// ==========================
+app.post("/logout", (req, res) => {
+  req.session.destroy((err) => {
+    if (err) return res.status(500).json({ message: "Logout failed" });
+    res.clearCookie("connect.sid");
+    res.json({ message: "Logged out successfully" });
+  });
+});
+
+// ==========================
+// SERVER START
+// ==========================
 app.listen(3000, () => {
   db.connect((e) => {
     if (e) throw e;
