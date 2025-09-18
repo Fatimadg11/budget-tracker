@@ -123,6 +123,14 @@ import express from "express";
 import cors from "cors";
 import bcrypt from "bcrypt";
 import { v4 as uuid } from "uuid";
+import session from "express-session"
+import path from "path";
+import { fileURLToPath } from "url";
+
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 const db = mysql.createConnection({
   host: "localhost",
@@ -134,6 +142,13 @@ const db = mysql.createConnection({
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+app.use(session({
+  secret: "supersecret",       // change in real app
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }    // true only if HTTPS
+}));
 
 // Signup route
 app.post("/signup", async (req, res) => {
@@ -179,10 +194,31 @@ app.post("/signup", async (req, res) => {
   });
 });
 
-// Login route (placeholder)
-app.post("/login", (req, res) => {
-  res.json({ message: "Login route coming soon" });
-});
+
+
+app.post("/login", async (req,res)=>{
+const user = req.body
+console.log(user)
+const command = "select * from users where username = ?"
+ 
+ db.query(command, [user.username],(error,result)=>{
+   if (error) throw error
+   if(result[0]?.id){
+       const comparepass = bcrypt.compareSync(user.password,result[0].passwords)
+       if(comparepass){
+        const user = result[0]?.id
+          req.session.userid = user
+          res.json(result[0])
+       }else{
+          res.json({error:"authentication failed"})
+       }
+   }
+
+   
+  
+})
+
+})
 
 // Start server
 app.listen(3000, () => {

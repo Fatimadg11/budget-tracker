@@ -9,7 +9,7 @@ window.onload = function () {
     return;
   }
 
-  loginBtn.addEventListener("click", function (event) {
+  loginBtn.addEventListener("click", async (event) => {
     console.log("Login button clicked!");
     event.preventDefault();
 
@@ -25,21 +25,43 @@ window.onload = function () {
     }
     //use fetch just like signup js but the body should just pass the username and password
     
-    const storedUser = localStorage.getItem(username);
-    console.log("Stored user:", storedUser);
+    // const storedUser = localStorage.getItem(username);
+    // console.log("Stored user:", storedUser);
 
-    if (!storedUser) {
-      alert(" User not found. Please sign up first.");
-      return;
-    }
+    // if (!storedUser) {
+    //   alert(" User not found. Please sign up first.");
+    //   return;
+    // }
 
-    const user = JSON.parse(storedUser);
+    
 
-    if (user.password === password) {
-      alert(`Welcome, ${user.username}!`);
-       window.location.href = "index.html";
-    } else {
-      alert("Incorrect password. Try again.");
-    }
+    // const user = JSON.parse(storedUser);
+
+    // if (user.password === password) {
+    //   alert(`Welcome, ${user.username}!`);
+    //    window.location.href = "index.html";
+    // } else {
+    //   alert("Incorrect password. Try again.");
+    // }
+
+      const wes = await fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, password }),
+    })
+
+      const qes=  await wes.json()
+
+      if (qes.id) {
+        window.location.href = "index.html"
+
+      }else{
+        alert("invalid information")
+      }
+
+      console.log("here is qes", qes)
   });
 };
+
+ 
+
