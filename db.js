@@ -12,14 +12,14 @@ const __dirname = path.dirname(__filename);
 
 // ✅ MySQL connection
 const db = mysql.createConnection({
-  host: "localhost",
+  host: "192.168.137.1",
   user: "fatimadg",
   password: "0978",
   database: "budget_app",
 });
 
 const app = express();
-app.use(cors({ origin: "http://localhost:5500", credentials: true })); // adjust origin to your frontend
+app.use(cors({})); // adjust origin to your frontend
 app.use(express.json());
 
 app.use(
