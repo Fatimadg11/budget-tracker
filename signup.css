@@ -21,10 +21,11 @@
 
 /* Body */
 body {
-  background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%);
+  /* background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 100%); */
   color: var(--dark);
   line-height: 1.6;
   min-height: 100vh;
+  background: #ffffff;
 }
 
 /* Header (kept structure, updated style) */
@@ -170,7 +171,7 @@ p {
   }
 }
 
-#send-otp-btn{
+#send-otp-btn {
   width: 80px;
   padding: 3.5px;
   margin-bottom: 20px;
@@ -182,7 +183,7 @@ p {
   color: white;
 }
 
-#otp{
+#otp {
   width: 80px;
   padding: 3.5px;
   margin-bottom: 20px;
@@ -191,10 +192,10 @@ p {
   font-size: 16px;
   transition: var(--smooth-transition);
   background-color: white;
-  color:black;
+  color: black;
 }
 
-#verify-otp-btn{
+#verify-otp-btn {
   width: 100px;
   padding: 3.5px;
   margin-bottom: 20px;
