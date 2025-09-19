@@ -128,6 +128,7 @@ legend {
   cursor: pointer;
   transition: var(--smooth-transition);
   box-shadow: 0 4px 12px rgba(232, 62, 140, 0.3);
+  /* margin-right: 20px; */
 }
 
 #submit:hover {
@@ -167,4 +168,41 @@ p {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+#send-otp-btn{
+  width: 80px;
+  padding: 3.5px;
+  margin-bottom: 20px;
+  border: 2px solid var(--light-gray);
+  border-radius: 10px;
+  font-size: 16px;
+  transition: var(--smooth-transition);
+  background-color: pink;
+  color: white;
+}
+
+#otp{
+  width: 80px;
+  padding: 3.5px;
+  margin-bottom: 20px;
+  border: 2px solid var(--light-gray);
+  border-radius: 10px;
+  font-size: 16px;
+  transition: var(--smooth-transition);
+  background-color: white;
+  color:black;
+}
+
+#verify-otp-btn{
+  width: 100px;
+  padding: 3.5px;
+  margin-bottom: 20px;
+  border: 2px solid var(--light-gray);
+  border-radius: 10px;
+  font-size: 16px;
+  transition: var(--smooth-transition);
+  background-color: white;
+  color: black;
+  margin-right: 40px;
 }
