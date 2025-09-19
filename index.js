@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // ==========================
 document.addEventListener("DOMContentLoaded", () => {
     const profileToggle = document.querySelector(".profile-toggle");
-    const dropbtn = document.querySelector(".dropbtn");
+    const dropbtn = document.querySelector("#toggleBtn");
 
     // Toggle dropdown on button click
     if (dropbtn) {
@@ -278,8 +278,31 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// ==========================
+// Hamburger Toggle
+// ==========================
+document.addEventListener("DOMContentLoaded", () => {
+    const toggleBtn = document.querySelector("#toggleBtn");
+    const dropdown = document.querySelector("#dropdownContent");
 
+    // Toggle dropdown on button click
+    toggleBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        dropdown.classList.toggle("active");
+    });
 
+    // Close dropdown when clicking outside
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(".hamburger-toggle")) {
+            dropdown.classList.remove("active");
+        }
+    });
 
-
-
+    // Close dropdown when a menu item is clicked
+    const dropdownItems = document.querySelectorAll(".dropdown-content input, .dropdown-content label");
+    dropdownItems.forEach(item => {
+        item.addEventListener("click", () => {
+            dropdown.classList.remove("active");
+        });
+    });
+});

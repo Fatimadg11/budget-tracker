@@ -20,7 +20,8 @@
       <button>Profile ▼</button>
       <div class="dropdown-content">
         <a href="settings.html">Settings</a>
-        <a id="logout"> Log Out</a>
+        <a href="logout.html"> Log Out</a>
+
         <!-- <a href="#" id="logoutBtn">Log Out</a> -->
 
       </div>
@@ -39,10 +40,9 @@
 
   </section>
 
-  <div class="toggle">
-    <button>category▼</button>
-    <div class="dropdown-content">
-
+  <div class="hamburger-toggle">
+    <button id="toggleBtn">Category ▼</button>
+    <div class="dropdown-content" id="dropdownContent" style="display: none;">
 
       <!-- income/expense -->
       <form id="category">
@@ -84,44 +84,48 @@
           </div>
         </fieldset>
       </form>
+    </div>
+  </div>
 
 
 
-      <!-- second section -->
-      <section class="last-part">
-        <div id="P">
-          <div id="w-s">
-            <p>Total Expense:</p>
-            <p>0.00</p>
-          </div>
-          <div id="t-i">
-            <p>Total Income:</p>
-            <p>0.00</p>
-          </div>
-          <div id="balance">
-            <p>Net Balance:</p>
-            <p>0.00</p>
-          </div>
-        </div>
 
-        <!-- expense history -->
-        <div id="expense-history">
-          <h2>Expense History</h2>
-          <table id="expenseHistoryTable">
-            <tr>
-              <th>Income/Expense</th>
-              <th>Date</th>
-              <th>Description</th>
-              <th>Amount</th>
-              <th>Location</th>
-              <th>Category</th>
-            </tr>
-          </table>
-          <button id="delete-expense"><img src="delete.webp" width="20" height="20"></button>
-        </div>
-      </section>
 
-      <script src="index.js"></script>
+  <!-- second section -->
+  <section class="last-part">
+    <div id="P">
+      <div id="w-s">
+        <p>Total Expense:</p>
+        <p>0.00</p>
+      </div>
+      <div id="t-i">
+        <p>Total Income:</p>
+        <p>0.00</p>
+      </div>
+      <div id="balance">
+        <p>Net Balance:</p>
+        <p>0.00</p>
+      </div>
+    </div>
+
+    <!-- expense history -->
+    <div id="expense-history">
+      <h2>Expense History</h2>
+      <table id="expenseHistoryTable">
+        <tr>
+          <th>Income/Expense</th>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Location</th>
+          <th>Category</th>
+        </tr>
+      </table>
+      <button id="delete-expense"><img src="delete.webp" width="20" height="20"></button>
+    </div>
+  </section>
+
+  <script src="index.js"></script>
 </body>
 
 </html>
