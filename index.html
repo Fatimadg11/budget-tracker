@@ -15,6 +15,7 @@
   <header>
     <h1 class="io">EXPENSELY</h1>
     <a href="about.html">About Us</a>
+
     <div class="profile-toggle">
       <button>Profile ▼</button>
       <div class="dropdown-content">
@@ -29,88 +30,98 @@
   <!-- first section -->
 
   <section class="first-part">
-    <h2>Add New Expense</h2>
+    <h2>Description</h2>
 
-    <!-- income/expense -->
-    <form id="category">
-      <fieldset>
-        <label><input type="radio" name="category" value="Expense" id="expense-radio"> Expense</label>
-        <label><input type="radio" name="category" value="Income" id="income-radio"> Income</label>
-      </fieldset>
-    </form>
-
-    <!-- details -->
-    <input type="date" id="date">
-    <input type="text" placeholder="What was it?" id="description">
-    <input type="number" placeholder="How much was it?" id="amount">
-    <input type="text" placeholder="Where?" id="location">
-
-    <!-- category selection -->
-    <form>
-      <fieldset>
-        <legend>Select Category</legend>
-        <div class="incomeexpense">
-          <label><input type="radio" name="form" value="Food"> Food</label>
-          <label><input type="radio" name="form" value="Transport"> Transport</label>
-          <label><input type="radio" name="form" value="Loans"> Loans</label>
-          <label><input type="radio" name="form" value="Vehicle"> Vehicle</label>
-          <label><input type="radio" name="form" value="Accomodation"> Accomodation</label>
-          <label><input type="radio" name="form" value="Clothing"> Clothing</label>
-          <label><input type="radio" name="form" value="Shopping"> Shopping</label>
-          <label><input type="radio" name="form" value="Travel"> Travel</label>
-          <label><input type="radio" name="form" value="Entertainment"> Entertainment</label>
-        </div>
-
-        <div class="incomeexpense">
-          <label><input type="radio" name="form" value="Salary"> Salary</label>
-          <label><input type="radio" name="form" value="Bonus"> Bonus</label>
-          <label><input type="radio" name="form" value="Accumulation"> Accumulation</label>
-          <label><input type="radio" name="form" value="Commissions"> Commissions</label>
-          <label><input type="radio" name="form" value="Investment"> Investment</label>
-          <label><input type="radio" name="form" value="Returns"> Returns</label>
-        </div>
-      </fieldset>
-    </form>
 
     <!-- add button -->
-    <button id="add_expense" type="button">Add Expense</button>
+    <button id="add_expense" type="button"><a href="add-expense.html" id="btn-link">Add Expense</a></button>
+
+
   </section>
 
-  <!-- second section -->
-  <section class="last-part">
-    <div id="P">
-      <div id="w-s">
-        <p>Total Expense:</p>
-        <p>0.00</p>
-      </div>
-      <div id="t-i">
-        <p>Total Income:</p>
-        <p>0.00</p>
-      </div>
-      <div id="balance">
-        <p>Net Balance:</p>
-        <p>0.00</p>
-      </div>
-    </div>
+  <div class="toggle">
+    <button>category▼</button>
+    <div class="dropdown-content">
 
-    <!-- expense history -->
-    <div id="expense-history">
-      <h2>Expense History</h2>
-      <table id="expenseHistoryTable">
-        <tr>
-          <th>Income/Expense</th>
-          <th>Date</th>
-          <th>Description</th>
-          <th>Amount</th>
-          <th>Location</th>
-          <th>Category</th>
-        </tr>
-      </table>
-      <button id="delete-expense"><img src="delete.webp" width="20" height="20"></button>
-    </div>
-  </section>
 
-  <script src="index.js"></script>
+      <!-- income/expense -->
+      <form id="category">
+        <fieldset>
+          <label><input type="radio" name="category" value="Expense" id="expense-radio"> Expense</label>
+          <label><input type="radio" name="category" value="Income" id="income-radio"> Income</label>
+        </fieldset>
+      </form>
+
+      <!-- details -->
+      <input type="date" id="date">
+      <input type="text" placeholder="What was it?" id="description">
+      <input type="number" placeholder="How much was it?" id="amount">
+      <input type="text" placeholder="Where?" id="location">
+
+      <!-- category selection -->
+      <form>
+        <fieldset>
+          <legend>Select Category</legend>
+          <div class="incomeexpense">
+            <label><input type="radio" name="form" value="Food"> Food</label>
+            <label><input type="radio" name="form" value="Transport"> Transport</label>
+            <label><input type="radio" name="form" value="Loans"> Loans</label>
+            <label><input type="radio" name="form" value="Vehicle"> Vehicle</label>
+            <label><input type="radio" name="form" value="Accomodation"> Accomodation</label>
+            <label><input type="radio" name="form" value="Clothing"> Clothing</label>
+            <label><input type="radio" name="form" value="Shopping"> Shopping</label>
+            <label><input type="radio" name="form" value="Travel"> Travel</label>
+            <label><input type="radio" name="form" value="Entertainment"> Entertainment</label>
+          </div>
+
+          <div class="incomeexpense">
+            <label><input type="radio" name="form" value="Salary"> Salary</label>
+            <label><input type="radio" name="form" value="Bonus"> Bonus</label>
+            <label><input type="radio" name="form" value="Accumulation"> Accumulation</label>
+            <label><input type="radio" name="form" value="Commissions"> Commissions</label>
+            <label><input type="radio" name="form" value="Investment"> Investment</label>
+            <label><input type="radio" name="form" value="Returns"> Returns</label>
+          </div>
+        </fieldset>
+      </form>
+
+
+
+      <!-- second section -->
+      <section class="last-part">
+        <div id="P">
+          <div id="w-s">
+            <p>Total Expense:</p>
+            <p>0.00</p>
+          </div>
+          <div id="t-i">
+            <p>Total Income:</p>
+            <p>0.00</p>
+          </div>
+          <div id="balance">
+            <p>Net Balance:</p>
+            <p>0.00</p>
+          </div>
+        </div>
+
+        <!-- expense history -->
+        <div id="expense-history">
+          <h2>Expense History</h2>
+          <table id="expenseHistoryTable">
+            <tr>
+              <th>Income/Expense</th>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>Location</th>
+              <th>Category</th>
+            </tr>
+          </table>
+          <button id="delete-expense"><img src="delete.webp" width="20" height="20"></button>
+        </div>
+      </section>
+
+      <script src="index.js"></script>
 </body>
 
 </html>

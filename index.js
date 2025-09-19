@@ -1,19 +1,19 @@
 console.log("✅ JS file is connected!");
 
- const logout = document.getElementById("logout")
-    logout.addEventListener("click", async(e)=>{
-        
-         e.preventDefault();
-         const rap = await fetch ("http://localhost:3000/logout",{
-            method:"PoST"
-         })
-         const rep = await rap.json()
-         console.log()
-         alert( `${rep.message}`)
-         window.location.href = "login.html"
+const logout = document.getElementById("logout")
+logout.addEventListener("click", async (e) => {
 
-         
+    e.preventDefault();
+    const rap = await fetch("http://localhost:3000/logout", {
+        method: "PoST"
     })
+    const rep = await rap.json()
+    console.log()
+    alert(`${rep.message}`)
+    window.location.href = "login.html"
+
+
+})
 
 document.addEventListener("DOMContentLoaded", () => {
     const addExpenseButton = document.getElementById("add_expense");
@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let transactionId = 0;
     let selectedRow = null;
 
-
-    document.getElementById('date').valueAsDate = new Date();
+    mydate = Date.now()
+    document.getElementById('date').valueAsDate = new Date(mydate);
 
     addExpenseButton.addEventListener("click", () => {
         const radio = document.querySelector('input[name="category"]:checked');
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const amount = parseFloat(document.getElementById("amount").value);
         const location = document.getElementById("location").value;
         const category = document.querySelector('input[name="form"]:checked');
-        
+
 
         if (!radio || !date || !description || isNaN(amount) || amount <= 0 || !location || !category) {
             alert("Please fill in all fields");
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
-                        userId: 1, 
+                        userId: 1,
                         oldPassword: oldPass,
                         newPassword: newPass,
                     }),

@@ -1,0 +1,93 @@
+:root {
+    --primary: #6c9bcf;
+    --secondary: #4a7abc;
+    --accent: #7fa7d8;
+    --light: #f0f7ff;
+    --dark: #2c3e50;
+    --success: #89c2d9;
+    --warning: #366ca3;
+    --gray: #8d9db6;
+    --light-gray: #e6f0ff;
+    --card-shadow: 0 4px 20px rgba(108, 155, 207, 0.15);
+    --smooth-transition: all 0.3s ease;
+}
+
+body {
+    background: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.expense-form {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    max-width: 600px;
+    width: 100%;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.expense-form h2 {
+    text-align: center;
+    color: var(--secondary);
+    margin-bottom: 25px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--dark);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid var(--light-gray);
+    border-radius: 10px;
+    font-size: 16px;
+    transition: var(--smooth-transition);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(34, 139, 34, 0.2);
+}
+
+.form-group textarea {
+    resize: none;
+    height: 100px;
+}
+
+.button-wrapper {
+    text-align: center;
+}
+
+.button-wrapper button {
+    background: linear-gradient(120deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 40px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--smooth-transition);
+}
+
+.button-wrapper button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
