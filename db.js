@@ -7,6 +7,8 @@ import session from "express-session";
 import path from "path";
 import { fileURLToPath } from "url";
 import dotenv from "dotenv"
+
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -117,6 +119,8 @@ app.post("/logout", (req, res) => {
   });
 });
 
+// app.put("")
+
 // ==========================
 // SERVER START
 // ==========================
@@ -126,4 +130,68 @@ app.listen(3000, () => {
     console.log("✅ MySQL connected successfully");
   });
   console.log("✅ Express server running on port 3000");
+});
+
+
+// ==========================
+// UPLOAD PROFILE PHOTO
+// ==========================
+// app.post("/profile/photo", upload.single("photo"), (req, res) => {
+//   if (!req.session.userId) {
+//     return res.status(401).json({ message: "Not logged in" });
+//   }
+
+//   const photoPath = `/uploads/${req.file.filename}`;
+
+//   const updateQuery = "UPDATE users SET profile_photo = ? WHERE id = ?";
+//   db.query(updateQuery, [photoPath, req.session.userId], (err) => {
+//     if (err) {
+//       console.error("DB error:", err);
+//       return res.status(500).json({ message: "Database error" });
+//     }
+
+//     res.json({ message: "Profile photo updated", photo: photoPath });
+//   });
+// });
+
+// // ✅ Serve uploaded files
+// app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+
+// (d) Change Password Endpoint
+
+// Add this below your login/logout routes:
+
+// ==========================
+// CHANGE PASSWORD
+// ==========================
+app.put("/profile/change-password", async (req, res) => {
+  if (!req.session.userId) {
+    return res.status(401).json({ message: "Not logged in" });
+  }
+
+  const { oldPassword, newPassword } = req.body;
+
+  if (!oldPassword || !newPassword) {
+    return res.status(400).json({ message: "Missing fields" });
+  }
+
+  const query2 = ""
+  const query = "SELECT passwords FROM users WHERE id = ?";
+  db.query(query, [req.session.userId], async (err, results) => {
+    if (err) return res.status(500).json({ message: "DB error" });
+
+    if (results.length === 0) return res.status(404).json({ message: "User not found" });
+
+    const isMatch = await bcrypt.compare(oldPassword, results[0].passwords);
+    if (!isMatch) return res.status(400).json({ message: "Old password incorrect" });
+
+    const hashedNew = await bcrypt.hash(newPassword, 10);
+
+    const update = "UPDATE users SET passwords = ? WHERE id = ?";
+    db.query(update, [hashedNew, req.session.userId], (err) => {
+      if (err) return res.status(500).json({ message: "Update error" });
+      res.json({ message: "Password updated successfully" });
+    });
+  });
 });

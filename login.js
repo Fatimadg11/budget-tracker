@@ -23,26 +23,7 @@ window.onload = function () {
       alert("Please enter both username and password");
       return;
     }
-    //use fetch just like signup js but the body should just pass the username and password
-    
-    // const storedUser = localStorage.getItem(username);
-    // console.log("Stored user:", storedUser);
-
-    // if (!storedUser) {
-    //   alert(" User not found. Please sign up first.");
-    //   return;
-    // }
-
-    
-
-    // const user = JSON.parse(storedUser);
-
-    // if (user.password === password) {
-    //   alert(`Welcome, ${user.username}!`);
-    //    window.location.href = "index.html";
-    // } else {
-    //   alert("Incorrect password. Try again.");
-    // }
+  
 
       const wes = await fetch("http://localhost:3000/login", {
       method: "POST",
