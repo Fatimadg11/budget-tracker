@@ -37,7 +37,7 @@ window.onload = function () {
         window.location.href = "index.html"
 
       }else{
-        alert("invalid information")
+        alert(`${qes.error}`)
       }
 
       console.log("here is qes", qes)

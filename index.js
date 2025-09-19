@@ -1,5 +1,19 @@
 console.log("✅ JS file is connected!");
 
+ const logout = document.getElementById("logout")
+    logout.addEventListener("click", async(e)=>{
+        
+         e.preventDefault();
+         const rap = await fetch ("http://localhost:3000/logout",{
+            method:"PoST"
+         })
+         const rep = await rap.json()
+         console.log()
+         alert( `${rep.message}`)
+         window.location.href = "login.html"
+
+         
+    })
 
 document.addEventListener("DOMContentLoaded", () => {
     const addExpenseButton = document.getElementById("add_expense");
