@@ -24,7 +24,7 @@ const db = mysql.createConnection({
 });
 
 const app = express();
-app.use(cors({})); // adjust origin to your frontend
+app.use(cors()); // adjust origin to your frontend
 app.use(express.json());
 
 app.use(
@@ -32,7 +32,12 @@ app.use(
     secret: "supersecret", // change this in production
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false }, // true only with HTTPS
+    cookie: { 
+      secure: false,
+     maxAge: 1000 * 60 * 60,
+     sameSite: "lax"
+
+     }, // true only with HTTPS
   })
 );
 
@@ -93,11 +98,12 @@ app.post("/login", (req, res) => {
 
     const isMatch = await bcrypt.compare(password, result[0].passwords);
     if (!isMatch) {
-      return res.status(400).json({ error: "Invalid credentials" });
+      return res.status(400).json({ error: "Invalid credentials here" });
     }
-
+    
     // ✅ Save user in session
     req.session.userId = result[0].id;
+    console.log("here g ", req.session.userId )
 
     res.json({
       id: result[0].id,
@@ -109,15 +115,51 @@ app.post("/login", (req, res) => {
 });
 
 // ==========================
+// CHANGE PASSWORD
+// ==========================
+
+app.post("/profile/changePassword", async (req, res) => {
+  console.log(req.session.userId)
+  if (!req.session.userId) {
+    return res.status(401).json({ message: "Not logged in" });
+  }
+
+  const { oldPassword, newPassword } = req.body;
+  console.log(oldPassword,newPassword)
+
+  if (!oldPassword || !newPassword) {
+    return res.status(400).json({ message: "Missing fields" });
+  }
+
+  const query = "SELECT passwords FROM users WHERE id = ?";
+  db.query(query, [req.session.userId], async (err, results) => {
+    if (err) return res.status(500).json({ message: "DB error" });
+
+    if (results.length === 0) return res.status(404).json({ message: "User not found" });
+
+    const isMatch = await bcrypt.compare(oldPassword, results[0].passwords);
+    if (!isMatch) return res.status(400).json({ message: "Old password incorrect" });
+
+    const hashedNew = await bcrypt.hash(newPassword, 10);
+
+    const update = "UPDATE users SET passwords = ? WHERE id = ?";
+    db.query(update, [hashedNew, req.session.userId], (err) => {
+      if (err) return res.status(500).json({ message: "Update error" });
+      res.json({ message: "Password updated successfully" });
+    });
+  });
+});
+
+// ==========================
 // LOGOUT
 // ==========================
 app.post("/logout", (req, res) => {
-  req.session.destroy((err) => {
-    if (err) return res.status(500).json({ message: "Logout failed" });
-    res.clearCookie("connect.sid");
-    res.json({ message: "Logged out successfully" });
-  });
+ req.session.userId  = null
+
+  res.json({ message: "Logged out successfully" });
 });
+
+
 
 // app.put("")
 
@@ -162,36 +204,5 @@ app.listen(3000, () => {
 
 // Add this below your login/logout routes:
 
-// ==========================
-// CHANGE PASSWORD
-// ==========================
-app.put("/profile/change-password", async (req, res) => {
-  if (!req.session.userId) {
-    return res.status(401).json({ message: "Not logged in" });
-  }
 
-  const { oldPassword, newPassword } = req.body;
 
-  if (!oldPassword || !newPassword) {
-    return res.status(400).json({ message: "Missing fields" });
-  }
-
-  const query2 = ""
-  const query = "SELECT passwords FROM users WHERE id = ?";
-  db.query(query, [req.session.userId], async (err, results) => {
-    if (err) return res.status(500).json({ message: "DB error" });
-
-    if (results.length === 0) return res.status(404).json({ message: "User not found" });
-
-    const isMatch = await bcrypt.compare(oldPassword, results[0].passwords);
-    if (!isMatch) return res.status(400).json({ message: "Old password incorrect" });
-
-    const hashedNew = await bcrypt.hash(newPassword, 10);
-
-    const update = "UPDATE users SET passwords = ? WHERE id = ?";
-    db.query(update, [hashedNew, req.session.userId], (err) => {
-      if (err) return res.status(500).json({ message: "Update error" });
-      res.json({ message: "Password updated successfully" });
-    });
-  });
-});

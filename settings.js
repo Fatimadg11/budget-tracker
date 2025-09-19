@@ -1,20 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
     const passwordForm = document.getElementById("passwordForm");
-
+   
     if (passwordForm) {
-        passwordForm.addEventListener("submit", (e) => {
+        passwordForm.addEventListener("submit", async (e) => {
             e.preventDefault();
 
-            const oldPass = document.getElementById("oldPassword").value;
-            const newPass = document.getElementById("newPassword").value;
+            const oldPassword = document.getElementById("oldPassword").value;
+            const newPassword = document.getElementById("newPassword").value;
 
-            if (newPass.length < 6) {
+            if (newPassword.length < 6) {
                 alert("New password must be at least 6 characters.");
                 return;
             }
+            const rap = await fetch ("http://localhost:3000/profile/changePassword", {
+               method: "POST",
+               headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ oldPassword, newPassword }),
+               })
+               console.log(rap)
+               if (!rap){
+                alert("could not featch")
+               }
+              const rep = await rap.json()
+              console.log(rep)
+              if (rep){
+                alert(`${rep.message}`);
+              } 
 
-            // Later: send this to your backend
-            alert("✅ Password updated successfully!");
+            
+            
             passwordForm.reset();
         });
     }
