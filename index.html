@@ -14,6 +14,15 @@
   <!-- header -->
   <header>
     <h1 class="io">EXPENSELY</h1>
+    <div class="ref">
+      <form action=""> 
+        <input type="search" placeholder="search">
+      </form>
+
+      <div class="notifacation">
+        bell
+      </div>
+
     <a href="about.html">About Us</a>
 
     <div class="profile-toggle">
@@ -26,17 +35,21 @@
 
       </div>
     </div>
+
+    </div>
   </header>
 
   <!-- first section -->
 
   <section class="first-part">
-    <h2>Description</h2>
+    <div class="l">
+    <h2>Welcome to your Dashboard</h2>
+      </div>
 
-
+      <div class="m">
     <!-- add button -->
     <button id="add_expense" type="button"><a href="add-expense.html" id="btn-link">Add Expense</a></button>
-
+    </div>
 
   </section>
 
@@ -62,14 +75,16 @@
 
     <!-- expense history -->
     <div id="expense-history">
-      <h2>Expense History</h2>
+      <div class="monday">
+      <h2>Recent Expenses</h2>
+       <button id="filter" >Filter</button>
+      </div>
       <table id="expenseHistoryTable">
         <tr>
-          <th>Income/Expense</th>
           <th>Date</th>
+          <th>Income/Expense</th>
           <th>Description</th>
           <th>Amount</th>
-          <th>Location</th>
           <th>Category</th>
         </tr>
       </table>

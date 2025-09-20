@@ -194,3 +194,23 @@ footer {
 .hover-image {
   animation: fadeIn 0.5s ease-out;
 }
+
+.lake{
+  display: flex;
+  border: 1px solid black;
+  justify-content: space-between;
+}
+
+.com{
+   border: 1px solid black;
+   margin: 10px;
+   
+}
+
+.soft{
+   border: 1px solid black;
+}
+
+.cls{
+  margin-left: 45px;
+}
