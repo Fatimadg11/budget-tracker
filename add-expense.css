@@ -73,6 +73,9 @@ body {
 
 .button-wrapper {
     text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
 }
 
 .button-wrapper button {

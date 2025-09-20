@@ -138,9 +138,9 @@
    transition: var(--smooth-transition);
  }
 
- .hamburger-toggle button:hover {
+ /* .hamburger-toggle button:hover {
    background: var(--secondary);
- }
+ } */
 
  /* Dropdown base (hidden by default) */
  .dropdown-content {
@@ -172,11 +172,11 @@
    color: var(--dark);
  }
 
- .dropdown-content label:hover {
+ /* .dropdown-content label:hover {
    background: var(--light-gray);
    border-radius: 6px;
    padding: 4px;
- }
+ } */
 
 
  ------------------------------------

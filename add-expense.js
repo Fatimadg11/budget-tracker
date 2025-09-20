@@ -24,3 +24,39 @@ document.getElementById("addExpenseForm").addEventListener("submit", function (e
         })
         .catch(err => console.error("Error:", err));
 });
+
+// Simple client-side handling of adding expenses to a list
+const expenseForm = document.getElementById("expenseForm");
+const expenseList = document.getElementById("expenseList");
+const deleteFormBtn = document.getElementById("deleteFormBtn");
+
+// ADD EXPENSE
+expenseForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const date = document.getElementById("date").value;
+    const desc = document.getElementById("description").value;
+    const amount = document.getElementById("amount").value;
+    const location = document.getElementById("location").value;
+
+    // create new list item
+    const li = document.createElement("li");
+    li.innerHTML = `
+      ${date} | ${desc} | ₦${amount} | ${location}
+      <button class="deleteExpenseBtn">Delete</button>
+    `;
+
+    // delete this specific expense
+    li.querySelector(".deleteExpenseBtn").addEventListener("click", () => {
+        li.remove();
+    });
+
+    expenseList.appendChild(li);
+    expenseForm.reset(); // clear inputs after adding
+});
+
+// CLEAR FORM (Delete button in the form itself)
+deleteFormBtn.addEventListener("click", () => {
+    expenseForm.reset();
+});
+
