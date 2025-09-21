@@ -253,3 +253,27 @@ h1.io {
         width: 100%;
     }
 }
+
+
+#btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+#btn-primary:hover {
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  transform: translateY(-2px);
+}
+
+#btn-secondary {
+  background: white;
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+  border-radius: 12px;
+  padding: 8px;
+}
+
+#btn-secondary:hover {
+  background: var(--light-gray);
+  transform: translateY(-2px);
+}
