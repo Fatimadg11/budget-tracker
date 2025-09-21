@@ -1,3 +1,120 @@
+/* ========================= */
+/* Hero Section */
+/* ========================= */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 60px;
+  background: var(--light-gray);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  margin: 40px auto;
+  max-width: 1200px;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--dark);
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+/* ========================= */
+/* Buttons */
+/* ========================= */
+.btn {
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--smooth-transition);
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  box-shadow: 0 4px 12px rgba(108, 155, 207, 0.3);
+}
+
+.btn.primary:hover {
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  transform: translateY(-2px);
+}
+
+.btn.secondary {
+  background: white;
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+}
+
+.btn.secondary:hover {
+  background: var(--light-gray);
+  transform: translateY(-2px);
+}
+
+/* ========================= */
+/* Features Section */
+/* ========================= */
+.features {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+}
+
+.features ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.features li {
+  font-size: 1.1rem;
+  margin: 12px 0;
+  color: var(--dark);
+  position: relative;
+  padding-left: 30px;
+}
+
+.features li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+help me with the css
+
 /* Modern Reset */
 * {
   margin: 0;
@@ -195,22 +312,22 @@ footer {
   animation: fadeIn 0.5s ease-out;
 }
 
-.lake{
+.lake {
   display: flex;
   border: 1px solid black;
   justify-content: space-between;
 }
 
-.com{
-   border: 1px solid black;
-   margin: 10px;
-   
+.com {
+  border: 1px solid black;
+  margin: 10px;
+
 }
 
-.soft{
-   border: 1px solid black;
+.soft {
+  border: 1px solid black;
 }
 
-.cls{
+.cls {
   margin-left: 45px;
 }
