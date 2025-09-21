@@ -472,6 +472,7 @@
    width: 50px;
    height: 35px;
    border-radius: 8px;
+   margin-top: 10px;
  }
 
  .first-part {
@@ -482,7 +483,18 @@
  .ref {
    display: flex;
  }
-/* 
+
  .notification {
-  margin-right: 50px;
- } */
+  border-radius: 50px;
+  
+ }
+
+ .notification:hover{
+  transform: translateY(2px);
+  cursor: pointer;
+ }
+
+ .search{
+  margin-top: 8px;
+  margin-right: 20px;
+ }
