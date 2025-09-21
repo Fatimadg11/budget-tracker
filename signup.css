@@ -132,11 +132,11 @@ legend {
 }
 
 /* OTP Section */
-.otp-section {
+#otp{
   display: flex;
   gap: 10px;
   align-items: center;
-  margin-bottom: 20px;
+  
 }
 
 #send-otp-btn,
@@ -149,6 +149,7 @@ legend {
   cursor: pointer;
   transition: var(--smooth-transition);
   white-space: nowrap;
+  width: 120px;
 }
 
 #send-otp-btn {
@@ -210,6 +211,9 @@ p {
   color: var(--secondary);
   text-decoration: underline;
 }
+label{
+  margin-block: 20px;
+}
 
 /* Animation */
 @keyframes fadeIn {
@@ -247,9 +251,4 @@ p {
     align-items: stretch;
   }
 
-  #send-otp-btn,
-  #verify-otp-btn {
-    width: 100%;
-    margin-bottom: 10px;
-  }
 }
