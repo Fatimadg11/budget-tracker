@@ -50,7 +50,7 @@
 
  header a {
    text-decoration: none;
-   color: black;
+   color: #7fa7d8;
    font-weight: 600;
    margin-right: 20px;
    padding: 8px 12px;
@@ -213,8 +213,8 @@
    font-size: 1.8rem;
    color: var(--secondary);
    padding-bottom: 15px;
-   border-bottom: 2px solid var(--light-gray);
-   margin-bottom: 25px;
+   /* border-bottom: 2px solid var(--light-gray); */
+   /* margin-bottom: 25px; */
  }
 
  /* Forms */
@@ -336,12 +336,13 @@
  #t-i,
  #w-s,
  #balance {
-   background: linear-gradient(135deg, var(--primary), var(--secondary));
-   color: white;
+   /* background: linear-gradient(135deg, var(--primary), var(--secondary)); */
+   /* color: white; */
    padding: 25px;
    border-radius: 12px;
    text-align: center;
    box-shadow: var(--card-shadow);
+   border: 1px solid black;
  }
 
  #t-i p:first-child,
@@ -466,10 +467,11 @@
  .monday {
    display: flex;
    justify-content: space-between;
+   margin-top: 20px;
  }
 
  #filter {
-   width: 50px;
+   width: 70px;
    height: 35px;
    border-radius: 8px;
  }
@@ -481,9 +483,18 @@
 
  .ref {
    display: flex;
+   justify-content: space-between;
+    border: 1px solid black;
+    width: 300px;
  }
 
  .notification {
    border: 1px solid black;
    border-radius: 30px;
+   padding-left: 10px;
+
+ }
+
+ .searchs{
+  /* height: 40px; */
  }
