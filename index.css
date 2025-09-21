@@ -474,6 +474,7 @@
    width: 70px;
    height: 35px;
    border-radius: 8px;
+   margin-top: 10px;
  }
 
  .first-part {
@@ -491,10 +492,4 @@
  .notification {
    border: 1px solid black;
    border-radius: 30px;
-   padding-left: 10px;
-
- }
-
- .searchs{
-  /* height: 40px; */
  }
