@@ -150,7 +150,9 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(120deg, var(--primary), var(--secondary));
+     background: transparent;
+   backdrop-filter: blur(10px);
+  /* background: linear-gradient(120deg, var(--primary), var(--secondary)); */
   padding: 18px 30px;
   display: flex;
   justify-content: space-between;
@@ -165,7 +167,7 @@ header {
 
 header a {
   text-decoration: none;
-  color: white;
+  color: #7fa7d8;
   font-weight: 600;
   margin-left: 20px;
   padding: 8px 12px;
