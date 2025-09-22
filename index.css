@@ -476,7 +476,7 @@
    height: 35px;
    border-radius: 8px;
    margin-top: 10px;
-   background: var(--warning);
+   background: linear-gradient(120deg, var(--primary), var(--secondary));
    border: none;
  }
 
@@ -493,22 +493,22 @@
  }
 
  .notification {
-  border-radius: 50px;
-  margin-right: 20px;
-  
+   border-radius: 50px;
+   margin-right: 20px;
+
  }
 
- .notification:hover{
-  transform: translateY(2px);
-  cursor: pointer;
+ .notification:hover {
+   transform: translateY(2px);
+   cursor: pointer;
  }
 
- .search{
-  margin-top: -1px;
-  margin-right: 20px;
-  width: 250px;
-  height: 30px;
-  background: white;
+ .search {
+   margin-top: -1px;
+   margin-right: 20px;
+   width: 250px;
+   height: 30px;
+   background: white;
    color: black;
    border: 1px solid black;
    border-radius: 6px;
@@ -522,6 +522,6 @@
 
  }
 
- .delete-btn{
-  margin-left: 95%;
+ .delete-btn {
+   margin-left: 95%;
  }
