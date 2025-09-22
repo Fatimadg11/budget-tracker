@@ -332,18 +332,20 @@
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
    gap: 20px;
+   
  }
 
  #t-i,
  #w-s,
  #balance {
-   /* background: linear-gradient(135deg, var(--primary), var(--secondary)); */
-   /* color: white; */
+   background: linear-gradient(135deg, var(--primary), var(--secondary));
+   color: white;
    padding: 25px;
    border-radius: 12px;
    text-align: center;
    box-shadow: var(--card-shadow);
-   border: 1px solid black;
+   /* border: 1px solid black; */
+   
  }
 
  #t-i p:first-child,
@@ -410,7 +412,7 @@
  }
 
  #delete-expense:hover {
-   background: #e06b6b;
+   background: #a02929bf;
  }
 
  /* Responsive Design */
@@ -477,6 +479,7 @@
    border-radius: 8px;
    margin-top: 10px;
    background: var(--warning);
+   color: white;
    border: none;
  }
 
