@@ -33,7 +33,7 @@
  /* Header */
  header {
    /* background: linear-gradient(120deg, var(--primary), var(--secondary)); */
-   background: white;
+   /* background: white; */
    backdrop-filter: blur(10px);
    padding: 18px 30px;
    display: flex;
@@ -476,6 +476,8 @@
    height: 35px;
    border-radius: 8px;
    margin-top: 10px;
+   background: var(--warning);
+   border: none;
  }
 
  .first-part {

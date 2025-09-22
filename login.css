@@ -32,9 +32,11 @@ body {
 
 /* Header (kept structure, new style) */
 header {
-  /* background: linear-gradient(120deg, var(--primary), var(--secondary)); */
-    background: transparent;
+  background: transparent;
   backdrop-filter: blur(10px);
+  /* background: linear-gradient(120deg, var(--primary), var(--secondary)); */
+    /* background: transparent; */
+  /* backdrop-filter: blur(10px); */
   padding: 18px 30px;
   display: flex;
   justify-content: space-between;
