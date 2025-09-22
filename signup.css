@@ -35,12 +35,16 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(120deg, var(--primary), var(--secondary));
+  background: transparent;
+  backdrop-filter: blur(10px);
+  /* background: linear-gradient(120deg, var(--primary), var(--secondary)); */
   padding: 18px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: sticky;
+   top: 0;
   width: 98%;
   border-radius: 10px;
   margin-bottom: 40px;
@@ -48,7 +52,7 @@ header {
 
 header a {
   text-decoration: none;
-  color: white;
+  color: #7fa7d8;
   font-weight: 600;
   margin-right: 20px;
   padding: 8px 12px;
@@ -111,14 +115,15 @@ legend {
 #password,
 #email,
 #username,
-#confirmPassword,
-#otp {
+#confirmPassword{
   width: 100%;
   padding: 14px;
   border: 2px solid var(--light-gray);
   border-radius: 10px;
   font-size: 16px;
   transition: var(--smooth-transition);
+  margin-top: -40px;
+
 }
 
 #password:focus,
@@ -136,10 +141,18 @@ legend {
   display: flex;
   gap: 10px;
   align-items: center;
+  margin-top: -65px;
+  margin-bottom: -20px;
+  width: 100%;
+  padding: 14px;
+  border: 2px solid var(--light-gray);
+  border-radius: 10px;
+  font-size: 16px;
+  transition: var(--smooth-transition);
   
 }
 
-#send-otp-btn,
+
 #verify-otp-btn {
   padding: 12px 16px;
   border: none;
@@ -155,10 +168,28 @@ legend {
 #send-otp-btn {
   background: var(--primary);
   color: white;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--smooth-transition);
+  white-space: nowrap;
+  width: 120px;
+  margin-top: -10px;
 }
 
 #send-otp-btn:hover {
-  background: var(--secondary);
+  background:  #2a9dc7;
+}
+
+#send-otp-btn::before{
+background: var(--primary);
+}
+
+#send-otp-btn::after{
+  background:  #2a9dc7;
 }
 
 #verify-otp-btn {
@@ -190,6 +221,7 @@ legend {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(67, 97, 238, 0.4);
 }
+
 
 /* Paragraph */
 p {

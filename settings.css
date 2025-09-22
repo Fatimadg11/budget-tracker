@@ -25,7 +25,9 @@ body {
 
 /* Header (same as index) */
 header {
-    background: linear-gradient(120deg, var(--primary), var(--secondary));
+    /* background: linear-gradient(120deg, var(--primary), var(--secondary)); */
+      background: transparent;
+  backdrop-filter: blur(10px);
     padding: 18px 30px;
     display: flex;
     justify-content: space-between;
@@ -41,7 +43,7 @@ header {
 
 header a {
     text-decoration: none;
-    color: white;
+    color: #7fa7d8;
     font-weight: 600;
     margin-right: 20px;
     padding: 8px 12px;
@@ -252,4 +254,28 @@ h1.io {
     .photo-actions button {
         width: 100%;
     }
+}
+
+
+#btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+#btn-primary:hover {
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  transform: translateY(-2px);
+}
+
+#btn-secondary {
+  background: white;
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+  border-radius: 12px;
+  padding: 8px;
+}
+
+#btn-secondary:hover {
+  background: var(--light-gray);
+  transform: translateY(-2px);
 }

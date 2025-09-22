@@ -32,20 +32,26 @@ body {
 
 /* Header (kept structure, new style) */
 header {
-  background: linear-gradient(120deg, var(--primary), var(--secondary));
+  background: transparent;
+  backdrop-filter: blur(10px);
+  /* background: linear-gradient(120deg, var(--primary), var(--secondary)); */
+    /* background: transparent; */
+  /* backdrop-filter: blur(10px); */
   padding: 18px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 98%;
+  position: sticky;
+   top: 0;
   border-radius: 10px;
   margin-bottom: 40px;
 }
 
 header a {
   text-decoration: none;
-  color: white;
+  color: #7fa7d8;
   font-weight: 600;
   margin-right: 20px;
   padding: 8px 12px;

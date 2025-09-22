@@ -150,7 +150,9 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(120deg, var(--primary), var(--secondary));
+     background: transparent;
+   backdrop-filter: blur(10px);
+  /* background: linear-gradient(120deg, var(--primary), var(--secondary)); */
   padding: 18px 30px;
   display: flex;
   justify-content: space-between;
@@ -165,7 +167,7 @@ header {
 
 header a {
   text-decoration: none;
-  color: white;
+  color: #7fa7d8;
   font-weight: 600;
   margin-left: 20px;
   padding: 8px 12px;
@@ -179,14 +181,17 @@ header a:hover {
 
 /* Page Title */
 h1 {
-  text-align: center;
+  /* text-align: center; */
   font-size: 2.5rem;
   margin: 100px auto 30px auto;
   color: var(--secondary);
   font-weight: 700;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   margin-top: 30px;
-  margin-left: 30px;
+
+}
+.logo{
+    margin-left: 30px;
 }
 
 h1.io {
@@ -231,11 +236,15 @@ h1.io {
 
 /* Section Titles */
 h2 {
-  text-align: center;
+ 
   font-size: 2rem;
   color: var(--secondary);
   font-weight: 700;
   margin-bottom: 25px;
+}
+
+.cleq{
+   text-align: center;
 }
 
 /* Team Members */
