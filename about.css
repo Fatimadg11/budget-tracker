@@ -113,7 +113,7 @@
   font-weight: bold;
 }
 
-help me with the css
+
 
 /* Modern Reset */
 * {
@@ -145,7 +145,7 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   padding-bottom: 40px;
-  background: ffffffff;
+  background: white;
 }
 
 /* Header */
