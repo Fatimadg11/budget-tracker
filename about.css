@@ -181,14 +181,17 @@ header a:hover {
 
 /* Page Title */
 h1 {
-  text-align: center;
+  /* text-align: center; */
   font-size: 2.5rem;
   margin: 100px auto 30px auto;
   color: var(--secondary);
   font-weight: 700;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
   margin-top: 30px;
-  margin-left: 30px;
+
+}
+.logo{
+    margin-left: 30px;
 }
 
 h1.io {
@@ -233,11 +236,15 @@ h1.io {
 
 /* Section Titles */
 h2 {
-  text-align: center;
+ 
   font-size: 2rem;
   color: var(--secondary);
   font-weight: 700;
   margin-bottom: 25px;
+}
+
+.cleq{
+   text-align: center;
 }
 
 /* Team Members */
